@@ -3,7 +3,7 @@ game 'gta5'
 lua54 'yes'
 
 author 'FirstSanchez#0'
-description 'The Core of Limitless make with Love 💖'
+description 'The Core make with Love 💖'
 version '2.0.0'
 
 -- //////////////////////////////
