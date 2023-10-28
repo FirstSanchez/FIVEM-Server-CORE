@@ -1,0 +1,351 @@
+@font-face {
+  font-family: kallisto;
+  src: url(../fonts/d_kallisto.otf);
+}
+
+@font-face {
+  font-family: rubrica;
+  src: url(../fonts/a_RubricaCn.ttf);
+}
+
+@font-face {
+  font-family: brothership;
+  src: url(../fonts/Brothership.otf);
+}
+
+@font-face {
+  font-family: drukcyr;
+  src: url(../fonts/DrukCyr-Medium.ttf);
+}
+
+@font-face {
+  font-family: drukcyr900;
+  src: url(../fonts/DrukCyr-Heavy.ttf);
+}
+
+@font-face {
+  font-family: drukcyr1000;
+  src: url(../fonts/DrukCyr-Super.ttf);
+}
+
+@font-face {
+  font-family: gilroy800;
+  src: url(../fonts/gilroy/gilroy-heavy.ttf);
+}
+
+@font-face {
+  font-family: gilroy700;
+  src: url(../fonts/gilroy/gilroy-bold.ttf);
+}
+
+@font-face {
+  font-family: gilroy600;
+  src: url(../fonts/gilroy/gilroy-semibold.ttf);
+}
+
+@font-face {
+  font-family: gilroy500;
+  src: url(../fonts/gilroy/gilroy-medium.ttf);
+}
+
+@font-face {
+  font-family: gilroy400;
+  src: url(../fonts/gilroy/gilroy-regular.ttf);
+}
+
+@font-face {
+  font-family: gilroy300;
+  src: url(../fonts/gilroy/gilroy-thin.ttf);
+}
+
+@font-face {
+  font-family: interVAR;
+  src: url(../fonts/inter-var.ttf);
+}
+
+@font-face {
+  font-family: montVAR;
+  src: url(../fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: akrobat600;
+  src: url(../fonts/Akrobat-SemiBold.otf);
+}
+
+@font-face {
+  font-family: akrobat700;
+  src: url(../fonts/Akrobat-Bold.otf);
+}
+
+@font-face {
+  font-family: akrobat800;
+  src: url(../fonts/Akrobat-ExtraBold.otf);
+}
+
+@font-face {
+  font-family: akrobat900;
+  src: url(../fonts/Akrobat-Black.otf);
+}
+
+@font-face {
+  font-family: digitalnumbers;
+  src: url(../fonts/DigitalNumbers-Regular.ttf);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  overflow: hidden;
+  user-select: none;
+  margin: 0;
+  padding: 0;
+  background-image:radial-gradient(56.16% 56.16% at 50.00% 50.00%, rgba(16, 23, 28, 0.98) 0%, rgba(6, 8, 9, 0.98) 100%), url(https://cdn.discordapp.com/attachments/1010631411851600045/1129536011999924325/photo_2023-06-29_20-01-14.jpg);
+  background-size: cover;
+  background-position: 50%;
+}
+
+.hidden {
+  display: none;
+}
+
+iframe{
+  position: absolute;
+  left: 0;
+  top: 0;
+  /* visibility: hidden; */
+}
+
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+input {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  border: 0;
+  vertical-align: baseline;
+  outline: none;
+}
+
+.center {
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.gilroy300 {
+  font-family: gilroy300;
+}
+
+.gilroy400 {
+  font-family: gilroy400;
+}
+
+.gilroy500 {
+  font-family: gilroy500;
+}
+
+.gilroy600 {
+  font-family: gilroy600;
+}
+
+.gilroy700 {
+  font-family: gilroy700;
+}
+
+.gilroy800 {
+  font-family: gilroy800;
+}
+
+.rubrica {
+  font-family: rubrica;
+}
+
+.drukcyr {
+  font-family: drukcyr;
+}
+
+.drukcyr900 {
+  font-family: drukcyr900;
+}
+
+.akrobat600 {
+  font-family: akrobat600;
+}
+
+.akrobat700 {
+  font-family: akrobat700;
+}
+
+.akrobat800 {
+  font-family: akrobat800;
+}
+
+.akrobat900 {
+  font-family: akrobat900;
+}
+
+.drukcyr1000 {
+  font-family: drukcyr1000;
+}
+
+.kallisto {
+  font-family: kallisto;
+  text-transform: uppercase;
+}
+
+.digitalnumbers {
+  font-family: digitalnumbers;
+}
+
+.mont300 {
+  font-family: montVAR;
+  font-weight: 300;
+}
+
+.mont400 {
+  font-family: montVAR;
+  font-weight: 400;
+}
+
+.mont600 {
+  font-family: montVAR;
+  font-weight: 600;
+}
+
+.mont700 {
+  font-family: montVAR;
+  font-weight: 700;
+}
+
+.mont900 {
+  font-family: montVAR;
+  font-weight: 900;
+}
+
+.inter400 {
+  font-family: interVAR;
+  font-weight: 400;
+}
+
+.inter500 {
+  font-family: interVAR;
+  font-weight: 500;
+}
+
+.inter900 {
+  font-family: interVAR;
+  font-weight: 900;
+}
+
+.mont500 {
+  font-family: montVAR;
+  font-weight: 500;
+}
+
+.brothership {
+  font-family: brothership;
+}
+
+.p-white {
+  color: #ffffff;
+}
+
+.p-white55 {
+  color: #ffffff8c;
+}
+
+.p-white25 {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.p-black {
+  color: rgba(0, 0, 0, 1);
+}
+
+.p-black65 {
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.p-red {
+  color: #fa3636;
+}

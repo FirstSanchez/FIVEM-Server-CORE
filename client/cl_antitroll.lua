@@ -1,0 +1,5 @@
+RegisterNetEvent('esx:onPlayerDeath')
+AddEventHandler('esx:onPlayerDeath', function(data)
+    -- if not exports["ws_ffa-v2"]:isInZone() and exports["ws_gangwar"]:getCurrentZone() == nil then -- EXPORT HIER FÜR FFA, GANGWAR UND SO LOOOOL (!)
+    TriggerServerEvent("esx:onPlayerDeath", data)
+end)

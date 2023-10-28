@@ -1,0 +1,34 @@
+-- UNTIL GROUP WHITELIST DEACTIVATED
+
+-- CreateThread(function ()
+--     while true do
+--         Wait(120000)
+--         for _, PLAYER_ID in ipairs(GetPlayers()) do
+--             Wait(1000)
+--             if PLAYER_ID ~= nil then
+--                 CheckMoney(PLAYER_ID)
+--             end
+--         end
+--     end
+-- end)
+-- MAX_MONEY = 100000000
+
+-- function CheckMoney(ID)
+--     if ESX ~= nil then
+--         local xPlayer = ESX.GetPlayerFromId(ID)
+--         if xPlayer ~= nil then
+--             local xMoney = xPlayer.getAccount('money').money
+--             local xBank = xPlayer.getAccount('bank').money
+--             local xBlack = xPlayer.getAccount('black_money').money
+--             if xMoney >= MAX_MONEY or xBank >= MAX_MONEY or xBlack >= MAX_MONEY then
+--                 print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+--                 print("^2Spieler aufgrund des Money Limits gebannt! " ..GetPlayerName(xPlayer.source).. "")
+--                 print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+--                 DropPlayer(xPlayer.source, "Du hast zu Viel Geld. Bitte melde dich bei der Projektleitung!")
+--                 TriggerEvent("EasyAdmin:addBan", xPlayer.source, "Money Limit - Bargeld: " ..xMoney.. ". Bank: " ..xBank.. ". Black: " ..xBlack, 10444633200)
+--             end
+--         end
+--     else
+--         print("ESX nicht gefunden")
+--     end
+-- end
