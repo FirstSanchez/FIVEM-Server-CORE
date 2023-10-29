@@ -1,10 +1,10 @@
 local takeHostage = {
 	allowedWeapons = {
-		`WEAPON_PISTOL`,
-		`WEAPON_COMBATPISTOL`,
-		`WEAPON_PISTOL50`,
-		`WEAPON_MACHINEPISTOL`,
-		`WEAPON_CERAMICPISTOL`,
+		'WEAPON_PISTOL',
+		'WEAPON_COMBATPISTOL',
+		'WEAPON_PISTOL50',
+		'WEAPON_MACHINEPISTOL',
+		'WEAPON_CERAMICPISTOL',
 		--etc add guns you want
 	},
 	InProgress = false,
