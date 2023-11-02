@@ -4,7 +4,7 @@ local text_program = [[
     local instanceInvite, insideInstance
     
     function GetInstance()
-        return instance
+        return instance 
     end
     
     function CreateInstance(type, data)
