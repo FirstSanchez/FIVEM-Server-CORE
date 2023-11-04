@@ -99,17 +99,19 @@ end, false)
 RegisterCommand('getDim', function(source, args)
     local xPlayer = ESX.GetPlayerFromId(source)
     local xTarget = ESX.GetPlayerFromId(tonumber(args[1]))
-    if xPlayer.getGroup() == 'papapl' or 'stvpl'then
-    TriggerClientEvent('esx:showNotification', Player.source, 'info', 'Information', 'Der Spieler befindet sich in der dim ' .. GetPlayerRoutingBucket(args[1])) 
+    if xPlayer.getGroup() == 'papapl' or 'stvpl' then
+    TriggerClientEvent('esx:showNotification', xPlayer.source, 'Der Spieler befindet sich in der Dimension: ' .. GetPlayerRoutingBucket(args[1])) 
     end
 end)
 
 RegisterCommand('setDim', function(source, args)
     local xPlayer = ESX.GetPlayerFromId(source)
     local xTarget = ESX.GetPlayerFromId(tonumber(args[1]))
-    if xPlayer.getGroup() == 'papapl' or 'stvpl'then
-        if tonumber(args[2]) < 6 then
+    if xPlayer.getGroup() == 'papapl' or 'stvpl' then
+        if tonumber(args[2]) < 99999999 then
             SetPlayerRoutingBucket(tonumber(args[1]), tonumber(args[2])) 
+            TriggerClientEvent('esx:showNotification', xPlayer.source, 'Der Spieler befindet sich nun in der Dimension: ' .. GetPlayerRoutingBucket(args[1])) 
+
         end
         return
     end
