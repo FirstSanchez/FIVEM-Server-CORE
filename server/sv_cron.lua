@@ -8,7 +8,7 @@ function RunAt(h, m, cb)
 		cb = cb
 	})
 end
-
+ 
 function GetTime()
 	local timestamp = os.time()
 	local d = os.date('*t', timestamp).wday
