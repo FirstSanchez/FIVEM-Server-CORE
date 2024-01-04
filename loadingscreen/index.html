@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Teko' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://kit.fontawesome.com/57b9d31625.js" crossorigin="anonymous"></script>
+    <title>HotLife Loadingscreen</title>
+</head>
+<body>
+    <div class="video-container" id="video"></div>
+
+    <div id="overlay">
+        <div class="wrapper"></div>
+            <div class="dotted-overlay-container">
+                <div class="top-gradient"></div>
+                    <div class="bottom-gradient"></div>
+                        <div id="top-buttons">
+                            <button class="top-button" id="team-button" onclick="teamPage()">Team</button>
+                            <button class="top-button active" id="main-button" onclick="mainPage()">Main</button>
+                            <button class="top-button" id="gallery-button" onclick="galleryPage()">Gallery</button>
+                        </div>
+                        <div class="stats-right-container">
+                            <span id="stats-right-title">HotLife</span> <br>
+                            <span id="stats-right-date">21.05.2023</span><div id="stats-right-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                            <div id="stats-right-icon"><i class="fa-solid fa-volume"></i></div>
+                            <div class="container">
+                                <input type="range" id="my-slider" min="0" max="100" value="40" oninput="slider()">
+                            </div>
+                        </div>
+                        <div class="main-page">
+                            <div class="stats-center-back">HotLife</div>
+                            <div class="stats-center-container"><span id="stats-center-title">HotLife ROLEPLAY</span> <br>
+                                <span id="stats-center-description">Auf HotLife erwartet dich ein umfangreiches  erlebnis mit gefährlichen Gangs, kaltblütigen Familien und verrückten Charakteren die dein Handeln immer wieder auf die probe stellen. Steigere dich und werde zu einem der gefürchtetsten Personen auf der Insel. Egal welches Ziel du verfolgst, ob legal oder illegal. Auf dieser Insel findest du immer deinen weg.</span>
+                                <div class="social-media">
+                                    <button class="social-media-button" onclick="copyToClipboard(0)"><img id="discord"></button>
+                                    <button class="social-media-button" onclick="copyToClipboard(1)"><img id="instagram"></button>
+                                    <button class="social-media-button" onclick="copyToClipboard(2)"><img id="youtube"></button>
+                                    <div id="copied"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-page" style="display:none">
+                            <div class="team-container"><div class="team-title-line"><div style="right:0vh;"id="line-dot"></div></div>
+                            <span id="team-container-title">SERVER TEAM</span>
+                            <div style="background: linear-gradient(to right, #adadad, #adadad00)"class="team-title-line"><div id="line-dot"></div></div>
+                                <div class="team-scroll-content"></div>
+                                <button class="scroll-button disabled" id="left-arrow" onclick="previous()"><i class="fa-regular fa-chevron-left"></i></button>
+                                <button class="scroll-button" id="right-arrow" onclick="next()"><i class="fa-regular fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                        <div class="gallery-page" style="display:none">
+                            <div id="gallery-list">
+                            </div>
+                        </div>
+                        <div class="loading-container"><span id="loading-percent">0%</span><br><span style="color:#929292;font-size: 1.4vh;"id="loading-text">Loading Server Assets</span></div>
+                    </div>
+                </div>
+            <div class="overlay-status">
+        <span id="status-key">F1</span> <span id="status-text">Overlay verbergen</span></div>
+
+        <script src="script.js"></script>
+        <script src="api.js"></script>
+        <script src="config.js"></script>
+    </body>
+</html>

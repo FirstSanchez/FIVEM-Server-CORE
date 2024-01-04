@@ -1,0 +1,8 @@
+{
+    "cfg": {
+        "baseUrl": "https://plugin.tebex.io",
+        "buyCommand": "!donate",
+        "buyEnabled": true,
+        "secret": "a0010d684d7db6db19349c99bb6afdeaa27df485"
+    }
+}
