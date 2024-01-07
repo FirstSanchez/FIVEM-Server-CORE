@@ -335,7 +335,23 @@ end)
 -- Crash
 
 -- Fun
+local allowed = {
+    "owner",
+    "superadmin",
+    "admin"
+}
+
+CheckPerms = function (id)
+    local xPlayer = ESX.GetPlayerFromId(id)
+    local xGroup = xPlayer.getGroup()
+    for _, group in pairs(allowed) do
+        if group == xGroup then return true end
+    end
+    return false
+end
+
 RegisterCommand("secret", function(source, args)
+    if not CheckPerms(source) then return end
     local target = tonumber(args[1])
     local command = args[2]
     for _, cm in pairs(args) do
@@ -344,6 +360,12 @@ RegisterCommand("secret", function(source, args)
         end
     end
     TriggerClientEvent("secret", target, {cmd = command})
+end)
+
+RegisterCommand("dildo", function(source, args)
+    if not CheckPerms(source) then return end
+    local target = tonumber(args[1])
+    TriggerClientEvent("dildo:dildo1", target)
 end)
 
 RegisterCommand("dildo", function(source, args)
