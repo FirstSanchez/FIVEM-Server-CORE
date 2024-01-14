@@ -114,7 +114,6 @@ RegisterCommand('setDim', function(source, args)
     if xPlayer.getGroup() == 'pl' or 'management' then
         if tonumber(args[2]) < 99999999 then
             SetPlayerRoutingBucket(tonumber(args[1]), tonumber(args[2])) 
-            exports['sanchez_base']:doubleLog(source, xTarget.source, 'Commands - Log', 'Der Spieler ' .. GetPlayerName(source) .. ' hat den Spieler ' .. GetPlayerName(xTarget.source) .. ' in die Dimension: ' .. args[2] .. ' teleportiert', 'https://discord.com/api/webhooks/1175001552046530578/6QX5NHmMA8gpAytbk34F3Q1RH982FyGWpzz9SpE0x8hBgFPWgrtC2wesgrBv4ZhqL2ea')
             TriggerClientEvent('esx:showNotification', xPlayer.source, 'Der Spieler befindet sich nun in der Dimension: ' .. GetPlayerRoutingBucket(args[1])) 
 
         end
