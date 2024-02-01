@@ -6,7 +6,7 @@ local back = 1
 local opacity = 1
 local scaleType = nil
 local scaleString = ""
-
+-- f
 
 CreateThread(function()
 	AddTextEntry("DMTattoos", "Tattoo Shop")
