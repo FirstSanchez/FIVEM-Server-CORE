@@ -38,6 +38,73 @@ Eine umfangreiche FiveM-Ressource, die verschiedene essenzielle Gameplay-Mechani
   - Sperrzonen-Management
   - Fraktionssperren
 
+## Befehle
+
+### Allgemeine Befehle
+- `/plz` - Zeigt die aktuelle Postleitzahl an
+- `/sit` - Hinsetzen an der aktuellen Position
+- `/carry` - Spieler tragen
+- `/gps` - GPS-System öffnen
+- `/knockout` - Spieler bewusstlos schlagen
+- `/billing` - Rechnung erstellen
+
+### Fahrzeug-Befehle
+- `/carlock` - Fahrzeug auf-/abschließen
+- `/shuff` - Auf Fahrersitz wechseln
+- `/repair` - Fahrzeug reparieren (mit Reparatur-Kit)
+- `/speedlimiter` - Geschwindigkeitsbegrenzung aktivieren
+
+### Admin-Befehle
+- `/clip` - Durch Wände gehen (Admin)
+- `/sperrzone` - Sperrzone erstellen/entfernen
+- `/troll` - Troll-Maßnahmen verwalten
+
+## Scriptfunktionen
+
+### Client-Exports
+```lua
+-- Fahrzeug-Funktionen
+exports['Sanchez-Base']:GetFuel(vehicle)
+exports['Sanchez-Base']:SetFuel(vehicle, fuel)
+exports['Sanchez-Base']:LockVehicle(vehicle)
+exports['Sanchez-Base']:UnlockVehicle(vehicle)
+
+-- Spieler-Funktionen
+exports['Sanchez-Base']:IsPlayerInSafezone()
+exports['Sanchez-Base']:CanPlayerPvP()
+exports['Sanchez-Base']:IsPlayerKnockedOut()
+
+-- GPS-Funktionen
+exports['Sanchez-Base']:SetGPSRoute(coords)
+exports['Sanchez-Base']:ClearGPSRoute()
+```
+
+### Server-Exports
+```lua
+-- Wirtschafts-Funktionen
+exports['Sanchez-Base']:CreateBill(playerId, amount, reason)
+exports['Sanchez-Base']:AddMoney(playerId, amount)
+
+-- Verwaltungs-Funktionen
+exports['Sanchez-Base']:AddToSafezone(coords, radius)
+exports['Sanchez-Base']:RemoveFromSafezone(zoneId)
+exports['Sanchez-Base']:SetFrakSperre(factionName, status)
+```
+
+### Events
+```lua
+-- Client Events
+RegisterNetEvent('Sanchez-Base:onEnterSafezone')
+RegisterNetEvent('Sanchez-Base:onLeaveSafezone')
+RegisterNetEvent('Sanchez-Base:onVehicleLock')
+RegisterNetEvent('Sanchez-Base:onKnockout')
+
+-- Server Events
+RegisterNetEvent('Sanchez-Base:billPaid')
+RegisterNetEvent('Sanchez-Base:playerDeath')
+RegisterNetEvent('Sanchez-Base:combatLog')
+```
+
 ## Installation
 
 1. Kopiere den Ordner in dein FiveM-Ressourcen-Verzeichnis
@@ -62,3 +129,10 @@ Die Konfigurationsdateien befinden sich im `config/`-Verzeichnis:
 - MySQL-Async
 - FiveM-Map-Skript (für Minimap)
 
+## Lizenz
+
+Alle Rechte vorbehalten. Dieses Projekt ist urheberrechtlich geschützt.
+
+## Support
+
+Bei Fragen oder Problemen wende dich bitte an den Support-Discord.
