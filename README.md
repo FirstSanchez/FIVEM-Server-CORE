@@ -1,111 +1,111 @@
 # 🎮 Sanchez-Base
 
 <div align="center">
-  <h3>Eine umfangreiche FiveM-Ressource für erweiterte Gameplay-Mechaniken</h3>
-  <p>Entwickelt für optimale Serverleistung und Spielerfahrung</p>
+  <h3>A comprehensive FiveM resource for enhanced gameplay mechanics</h3>
+  <p>Developed for optimal server performance and player experience</p>
 </div>
 
 ---
 
-## 📋 Inhaltsverzeichnis
-- [Hauptfunktionen](#-hauptfunktionen)
-- [Befehle](#-befehle)
-- [Scriptfunktionen](#-scriptfunktionen)
+## 📋 Table of Contents
+- [Main Features](#-main-features)
+- [Commands](#-commands)
+- [Script Functions](#-script-functions)
 - [Installation](#-installation)
-- [Konfiguration](#-konfiguration)
-- [Abhängigkeiten](#-abhängigkeiten)
+- [Configuration](#-configuration)
+- [Dependencies](#-dependencies)
 - [Support](#-support)
 
-## 🚀 Hauptfunktionen
+## 🚀 Main Features
 
-### 🛡️ Anti-Cheat & Sicherheit
-- **Anti-Troll-System** - Schützt Spieler vor Trolling
-- **Combat-Log-Schutz** - Verhindert Combat-Logging
-- **Anti-VDM-System** - Stoppt Vehicle-Deathmatch
-- **Mod-Menü-Erkennung** - Erkennt und verhindert Cheating
+### 🛡️ Anti-Cheat & Security
+- **Anti-Troll System** - Protects players from trolling
+- **Combat-Log Protection** - Prevents combat logging
+- **Anti-VDM System** - Stops vehicle deathmatch
+- **Mod Menu Detection** - Detects and prevents cheating
 
-### 👥 Spieler-Features
-- **Knockout-System** - Realistisches K.O.-System
-- **Carry-System** - Spieler tragen/transportieren
-- **Sitz-System** - Erweiterte Sitzmöglichkeiten
-- **Holster-System** - Realistisches Waffen-Holster
-- **GPS-System** - Fortschrittliche Navigation
-- **Plastische Chirurgie** - Charakteranpassung
-- **Tattoo-System** - Umfangreiches Tattoo-System
-- **Rucksack-System** - Erweitertes Inventar für Donatoren
+### 👥 Player Features
+- **Knockout System** - Realistic K.O. system
+- **Carry System** - Player carrying/transport
+- **Sit System** - Enhanced sitting options
+- **Holster System** - Realistic weapon holster
+- **GPS System** - Advanced navigation
+- **Plastic Surgery** - Character customization
+- **Tattoo System** - Comprehensive tattoo system
+- **Backpack System** - Extended inventory for donors
 
-### 🚗 Fahrzeug-Systeme
-- **Legacy Fuel** - Realistisches Tanksystem
-- **Fahrzeugschloss** - Sicherheitssystem
-- **Fahrzeugschaden** - Detaillierte Schadensmodelle
-- **Geschwindigkeitsbegrenzer** - Geschwindigkeitskontrolle
+### 🚗 Vehicle Systems
+- **Legacy Fuel** - Realistic fuel system
+- **Vehicle Lock** - Security system
+- **Vehicle Damage** - Detailed damage models
+- **Speed Limiter** - Speed control
 - **ELS** - Enhanced Lighting System
 
-### 💰 Wirtschafts-Features
-- **Rechnungssystem** - Digitale Zahlungen
-- **Minijob-System** - Zusätzliche Verdienstmöglichkeiten
-- **Schrottplatz** - Fahrzeugverwertung
-- **Muschel-Sammelsystem** - Sammelaktivität
+### 💰 Economy Features
+- **Billing System** - Digital payments
+- **Mini-job System** - Additional earning opportunities
+- **Scrapyard** - Vehicle recycling
+- **Shell Collection** - Collection activity
 
-### 🌍 Sicherheitszonen
-- **Safezone-System** - Geschützte Bereiche
-- **Sperrzonen** - Zugangsbeschränkungen
-- **Fraktionssperren** - Fraktionsbasierte Kontrollen
+### 🌍 Security Zones
+- **Safezone System** - Protected areas
+- **Restricted Zones** - Access restrictions
+- **Faction Locks** - Faction-based controls
 
-## ⌨️ Befehle
+## ⌨️ Commands
 
-### 📝 Allgemeine Befehle
+### 📝 General Commands
 \`\`\`
-/plz         - Zeigt aktuelle Postleitzahl
-/sit         - Hinsetzen
-/carry       - Spieler tragen
-/gps         - GPS-System öffnen
-/knockout    - Spieler bewusstlos schlagen
-/billing     - Rechnung erstellen
-\`\`\`
-
-### 🚙 Fahrzeug-Befehle
-\`\`\`
-/carlock     - Fahrzeug auf-/abschließen
-/shuff       - Auf Fahrersitz wechseln
-/repair      - Fahrzeug reparieren
-/speedlimiter- Geschwindigkeitsbegrenzung
+/plz         - Shows current postal code
+/sit         - Sit down
+/carry       - Carry player
+/gps         - Open GPS system
+/knockout    - Knock out player
+/billing     - Create bill
 \`\`\`
 
-### 👑 Admin-Befehle
+### 🚙 Vehicle Commands
 \`\`\`
-/clip       - Durch Wände gehen (Admin)
-/sperrzone  - Sperrzone erstellen/entfernen
-/troll      - Anti-Troll-Maßnahmen
+/carlock     - Lock/unlock vehicle
+/shuff       - Switch to driver's seat
+/repair      - Repair vehicle
+/speedlimiter- Speed limiter
 \`\`\`
 
-## 🔧 Scriptfunktionen
+### 👑 Admin Commands
+\`\`\`
+/clip       - Noclip through walls (Admin)
+/sperrzone  - Create/remove restricted zone
+/troll      - Anti-troll measures
+\`\`\`
 
-### 💻 Client-Exports
+## 🔧 Script Functions
+
+### 💻 Client Exports
 \`\`\`lua
--- Fahrzeug-Funktionen
+-- Vehicle Functions
 exports['Sanchez-Base']:GetFuel(vehicle)
 exports['Sanchez-Base']:SetFuel(vehicle, fuel)
 exports['Sanchez-Base']:LockVehicle(vehicle)
 exports['Sanchez-Base']:UnlockVehicle(vehicle)
 
--- Spieler-Funktionen
+-- Player Functions
 exports['Sanchez-Base']:IsPlayerInSafezone()
 exports['Sanchez-Base']:CanPlayerPvP()
 exports['Sanchez-Base']:IsPlayerKnockedOut()
 
--- GPS-Funktionen
+-- GPS Functions
 exports['Sanchez-Base']:SetGPSRoute(coords)
 exports['Sanchez-Base']:ClearGPSRoute()
 \`\`\`
 
-### 🖥️ Server-Exports
+### 🖥️ Server Exports
 \`\`\`lua
--- Wirtschafts-Funktionen
+-- Economy Functions
 exports['Sanchez-Base']:CreateBill(playerId, amount, reason)
 exports['Sanchez-Base']:AddMoney(playerId, amount)
 
--- Verwaltungs-Funktionen
+-- Management Functions
 exports['Sanchez-Base']:AddToSafezone(coords, radius)
 exports['Sanchez-Base']:RemoveFromSafezone(zoneId)
 exports['Sanchez-Base']:SetFrakSperre(factionName, status)
@@ -127,44 +127,44 @@ RegisterNetEvent('Sanchez-Base:combatLog')
 
 ## 📥 Installation
 
-1. Kopiere den Ordner in dein FiveM-Ressourcen-Verzeichnis
-2. Füge folgende Zeile in deine \`server.cfg\` ein:
+1. Copy the folder to your FiveM resources directory
+2. Add the following line to your \`server.cfg\`:
 \`\`\`cfg
 ensure Sanchez-Base
 \`\`\`
 
-## ⚙️ Konfiguration
+## ⚙️ Configuration
 
-Die Konfigurationsdateien befinden sich im \`config/\`-Verzeichnis:
+Configuration files are located in the \`config/\` directory:
 
-| Datei | Beschreibung |
+| File | Description |
 |-------|-------------|
-| cf_exports.lua | Haupt-Exports und Funktionen |
-| cf_logs.lua | Logging-Konfiguration |
-| cf_holster.lua | Holster-System-Einstellungen |
-| cf_vehicledamage.lua | Fahrzeugschaden-Einstellungen |
+| cf_exports.lua | Main exports and functions |
+| cf_logs.lua | Logging configuration |
+| cf_holster.lua | Holster system settings |
+| cf_vehicledamage.lua | Vehicle damage settings |
 
-### 🔗 Webhook-Konfiguration
+### 🔗 Webhook Configuration
 
-Die Datei \`webhooks.lua\` enthält Platzhalter für Discord-Webhooks:
+The \`webhooks.lua\` file contains placeholders for Discord webhooks:
 \`\`\`lua
 Config_Sperrzone.Webhook = "WEBHOOK_HERE"
 \`\`\`
-> ⚠️ Ersetze "WEBHOOK_HERE" mit deinem Discord-Webhook-Link
+> ⚠️ Replace "WEBHOOK_HERE" with your Discord webhook link
 
-## 📚 Abhängigkeiten
+## 📚 Dependencies
 
-- **ESX Framework** - Grundlegendes Framework
-- **MySQL-Async** - Datenbankverbindung
-- **FiveM-Map-Skript** - Für Minimap-Funktionalität
+- **ESX Framework** - Core framework
+- **MySQL-Async** - Database connection
+- **FiveM Map Script** - For minimap functionality
 
 ## 📞 Support
 
-Bei Fragen oder Problemen wende dich bitte an den Support-Discord.
+For questions or issues, please contact our Support Discord.
 
 ---
 
 <div align="center">
-  <p>Mit ❤️ entwickelt für die FiveM-Community</p>
-  <p>© 2023 Sanchez-Base. Alle Rechte vorbehalten.</p>
+  <p>Developed with ❤️ for the FiveM Community</p>
+  <p>© 2023 Sanchez-Base. All rights reserved.</p>
 </div>
