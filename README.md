@@ -38,26 +38,6 @@ Eine umfangreiche FiveM-Ressource, die verschiedene essenzielle Gameplay-Mechani
   - Sperrzonen-Management
   - Fraktionssperren
 
-## Befehle
-
-### Allgemeine Befehle
-- `/plz` - Zeigt die aktuelle Postleitzahl an
-- `/sit` - Hinsetzen an der aktuellen Position
-- `/carry` - Spieler tragen
-- `/gps` - GPS-System öffnen
-- `/knockout` - Spieler bewusstlos schlagen
-- `/billing` - Rechnung erstellen
-
-### Fahrzeug-Befehle
-- `/carlock` - Fahrzeug auf-/abschließen
-- `/shuff` - Auf Fahrersitz wechseln
-- `/repair` - Fahrzeug reparieren (mit Reparatur-Kit)
-- `/speedlimiter` - Geschwindigkeitsbegrenzung aktivieren
-
-### Admin-Befehle
-- `/clip` - Durch Wände gehen (Admin)
-- `/sperrzone` - Sperrzone erstellen/entfernen
-- `/troll` - Troll-Maßnahmen verwalten
 
 ## Scriptfunktionen
 
