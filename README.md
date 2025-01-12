@@ -125,11 +125,7 @@ Die Konfigurationsdateien befinden sich im `config/`-Verzeichnis:
 
 ### Webhook-Konfiguration
 
-Die Datei `webhooks.lua` enthält Platzhalter für Discord-Webhooks:
-```lua
-Config_Sperrzone.Webhook = "WEBHOOK_HERE"
-```
-Ersetze "WEBHOOK_HERE" mit deinem Discord-Webhook-Link für die entsprechende Funktionalität.
+Sämtliche Webhooks sind mit "WEBHOOK_HERE" zu finden
 
 ## Abhängigkeiten
 
