@@ -27,14 +27,14 @@ ESX.RegisterServerCallback('SANCHEZ_core:dubistzudummzummoddenhaahahha', functio
     }), {["Content-Type"] = "application/json"})
 
     Wait(1000)
-    TriggerEvent("EasyAdmin:addBan", source, "Du wurdest gebannt vom HotLife Netzwerk! Grund: Trigger ClientEvent detected", 10444633200, "SANCEZ AC")
+    TriggerEvent("EasyAdmin:addBan", source, "Du wurdest gebannt vom ESX Netzwerk! Grund: Trigger ClientEvent detected", 10444633200, "SANCEZ AC")
     cb(true)
 end)
 
 RegisterCommand('modder', function(source, args)
     if source == 0 then
         if args[1] then
-            TriggerEvent("EasyAdmin:addBan", args[1], "Du wurdest gebannt vom HotLife Netzwerk! Grund: Modding", 10444633200, "SANCEZ AC")
+            TriggerEvent("EasyAdmin:addBan", args[1], "Du wurdest gebannt vom ESX Netzwerk! Grund: Modding", 10444633200, "SANCEZ AC")
         end
     end
 end)

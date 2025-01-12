@@ -1,30 +1,3 @@
----///---///---///---///---///
---- ELS ---
----///---///---///---///---///
-
---[[
-'---------------------------------------------------
-LUXART VEHICLE CONTROL ELS CLICKS (2.1 Bug Fix) (FOR FIVEM)
----------------------------------------------------
-Last revision: MAY 01 2017 (VERS. 1.01)
-Coded by Lt.Caine
-ELS Clicks by Faction
----------------------------------------------------
-NOTES
-	LVC will automatically apply to all emergency vehicles (vehicle class 18)
----------------------------------------------------
-CONTROLS	
-	Right indicator:	=	(Next Custom Radio Track)
-	Left indicator:		-	(Previous Custom Radio Track)
-	Hazard lights:	Backspace	(Phone Cancel)
-	Toggle emergency lights:	Y	(Text Chat Team)
-	Airhorn:	E	(Horn)
-	Toggle siren:	,	(Previous Radio Station)
-	Manual siren / Change siren tone:	N	(Next Radio Station)
-	Auxiliary siren:	Down Arrow	(Phone Up)
----------------------------------------------------
-]]
-
 local count_bcast_timer = 0
 local delay_bcast_timer = 200
 

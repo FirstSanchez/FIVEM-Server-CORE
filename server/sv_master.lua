@@ -113,7 +113,7 @@ RegisterCommand('reviveall', function(source, args, rawCommand)
 				end
 			end
 			exports['sanchez_base']:log(source, 'Revive - Log', 'Der Spieler ' .. GetPlayerName(source) .. ' hat ' .. count .. ' Spieler in einem radius von ' .. args[1] .. ' revived', 'WEBHOOK_HERE')
-			TriggerClientEvent('cataleya_hud:sendNotify', source, 'info', 'Revive', 'Du hast ' .. count .. ' leute in einem radius von ' .. args[1] .. ' revived')
+			TriggerClientEvent('esx:showNotification', source, 'Du hast ' .. count .. ' Leute in einem Radius von ' .. args[1] .. ' revived')
 		end
 	end
 end)

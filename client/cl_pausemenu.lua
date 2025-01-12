@@ -1,7 +1,7 @@
 local nativeHash = GetHashKey("ADD_TEXT_ENTRY")
 
 function SetData()
-	Citizen.InvokeNative(nativeHash, 'FE_THDR_GTAO', "~b~HotLife | ~s~Hosted By ~y~avoro.eu")
+	Citizen.InvokeNative(nativeHash, 'FE_THDR_GTAO', "~b~ESX | ~s~Hosted By ~y~avoro.eu")
 end
 
 CreateThread(function() 

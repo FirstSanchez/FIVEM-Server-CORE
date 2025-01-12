@@ -12,5 +12,5 @@ Config_Fraksperre.CommandAllowedGroups = {
 Config_Fraksperre.unemployed = "unemployed"
 
 Config_Fraksperre.Notify = function(player, msg)
-    TriggerCientEvent("cataleya_hud:sendNotify", "info", "Information", msg, 5000)
+    TriggerEvent('esx:showNotification', msg)
 end

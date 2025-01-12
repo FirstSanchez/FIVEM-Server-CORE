@@ -27,5 +27,5 @@ AddEventHandler('HotLife_vendingmachine:machine:buySnack', function(index, amoun
 end)
 
 function Notify(sendTo, title, message, type)
-    TriggerEvent('cataleya_hud:sendNotify', title, message, type, 5000)
+    TriggerClientEvent('esx:showNotification', sendTo, message)
 end

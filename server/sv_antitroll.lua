@@ -14,12 +14,12 @@ function Logg(title, msg)
           }
         },
         author = {
-          name = "HotLife Anti AimLock LOGS",
-          url = "https://discord.gg/HotLife"
+          name = "ESX Anti AimLock LOGS",
+          url = "discord.gg/esx-hub"
         }
 		  }
 		},
-		username = "HotLife - MODDERKILLS"
+		username = "ESX - MODDERKILLS"
 	}
     PerformHttpRequest("WEBHOOK_HERE", function(err, text, headers)end, 'POST', json.encode(EMBED), { ['Content-Type']= 'application/json' })
 end

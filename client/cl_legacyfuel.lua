@@ -1,7 +1,7 @@
 if Configtanken.UseESX then
 	CreateThread(function()
 		while not ESX do
-			TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+			ESX = exports["es_extended"]:getSharedObject()
 			Wait(500)
 		end
 	end)

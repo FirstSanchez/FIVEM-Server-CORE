@@ -50,6 +50,6 @@ message = message .. ""
     }
 
 
-    PerformHttpRequest("WEBHOOK_HERE", function(err, text, headers) end, 'POST', json.encode({ username = "HotLife | Fraktionsliste",embeds = embeds}), { ['Content-Type'] = 'application/json' })
+    PerformHttpRequest("WEBHOOK_HERE", function(err, text, headers) end, 'POST', json.encode({ username = "ESX | Fraktionsliste",embeds = embeds}), { ['Content-Type'] = 'application/json' })
 end)
 -- Frakliste Ende

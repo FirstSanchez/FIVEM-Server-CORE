@@ -37,10 +37,10 @@ local vehlist = {
 CreateThread(function()
     while (true) do
         Wait(60000 * (Config_vehdespawn.despawnTimer - Config_vehdespawn.despawnNotificationTimes[1]))
-        TriggerClientEvent("cataleya_hud:sendNotify", -1, "info", "Carclear", string.format(Config_vehdespawn.timeLeftNotification, Config_vehdespawn.despawnNotificationTimes[1]), 5000)
+        TriggerClientEvent("esx:showNotification", -1, string.format(Config_vehdespawn.timeLeftNotification, Config_vehdespawn.despawnNotificationTimes[1]))
         for i = 2, #Config_vehdespawn.despawnNotificationTimes, 1 do
             Wait(60000 * (Config_vehdespawn.despawnNotificationTimes[i - 1] - Config_vehdespawn.despawnNotificationTimes[i]))
-            TriggerClientEvent("cataleya_hud:sendNotify", -1, "info", "Carclear", string.format(Config_vehdespawn.timeLeftNotification, Config_vehdespawn.despawnNotificationTimes[i]), 5000)
+            TriggerClientEvent("esx:showNotification", -1, string.format(Config_vehdespawn.timeLeftNotification, Config_vehdespawn.despawnNotificationTimes[i]))
         end
 
         DeleteAllVehicles()
@@ -49,7 +49,7 @@ end)
 
 RegisterCommand(Config_vehdespawn.despawnCommand, function(source, args, raw)
     if (#args > 0 and tonumber(args[1])) then
-        TriggerClientEvent("cataleya_hud:sendNotify", -1, "info", "Carclear", string.format(Config_vehdespawn.timeLeftNotification, args[1]), 5000)
+        TriggerClientEvent("esx:showNotification", -1, string.format(Config_vehdespawn.timeLeftNotification, args[1]))
 
         Wait(60000 * tonumber(args[1]))
     end
@@ -58,7 +58,7 @@ RegisterCommand(Config_vehdespawn.despawnCommand, function(source, args, raw)
 end, true)
 
 function DeleteAllVehicles()
-    TriggerClientEvent("cataleya_hud:sendNotify", -1, "info", "Carclear", Config_vehdespawn.deleteNotification, 5000)
+    TriggerClientEvent("esx:showNotification", -1, Config_vehdespawn.deleteNotification)
 
     local peds = GetAllPeds()
     local playerPeds = {}

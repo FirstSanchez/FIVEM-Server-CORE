@@ -30,7 +30,7 @@ AddEventHandler('killed', function (killer)
     local xSource = ESX.GetPlayerFromId(source)
     if killer ~= nil then
         xPlayer = ESX.GetPlayerFromId(killer)    
-        TriggerClientEvent('cataleya_hud:sendNotify', "info", source, "Kill-Notify", 'Du wurdest von ' .. xPlayer.getName() .. ' getötet',  5000)
-        TriggerClientEvent('cataleya_hud:sendNotify', "info", killer, "Kill-Notify", 'Du hast ' .. xSource.getName() .. ' getötet',  5000)
+        TriggerClientEvent('esx:showNotification', source, 'Du wurdest von ' .. xPlayer.getName() .. ' getötet')
+        TriggerClientEvent('esx:showNotification', killer, 'Du hast ' .. xSource.getName() .. ' getötet')
     end
 end)

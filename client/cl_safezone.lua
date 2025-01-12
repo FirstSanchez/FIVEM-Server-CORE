@@ -8,7 +8,6 @@ safezone.zones = {
 	-- { ['x'] = 178.6741, ['y'] = -973.0911, ['z'] = 29.7808}, -- Würfelpark 2
 }
 
-
 safezone.showNotification = true -- Show notification when in Safezone?
 safezone.safezoneMessage = "You are currently in a Safezone" -- Change the message that shows when you are in a safezone
 safezone.radius = 100.0 -- Change the RADIUS of the Safezone.
@@ -42,7 +41,6 @@ CreateThread(function()
 		local vehicle = GetVehiclePedIsIn(player, false)
 		local speed = GetEntitySpeed(vehicle)
 
-
 		if dist <= safezone.radius then
 			if not SafezoneIn then
 				NetworkSetFriendlyFireOption(false)
@@ -50,7 +48,7 @@ CreateThread(function()
 				ClearPlayerWantedLevel(PlayerId())
 				SetCurrentPedWeapon(player,GetHashKey("WEAPON_UNARMED"),true)
 				if safezone.showNotification then
-					TriggerEvent('cataleya_hud:sendNotify', "info", "Safezone", "Du bist nun in einer Safezone.", 10000)
+					ESX.ShowNotification("Du bist nun in einer Safezone.")
 				end
 				SafezoneIn = true
 				SafezoneOut = false
@@ -59,10 +57,10 @@ CreateThread(function()
 			if not SafezoneOut then
 				NetworkSetFriendlyFireOption(true)
 				if safezone.showNotification then
-					TriggerEvent('cataleya_hud:sendNotify', "info", "Safezone", "Du hast die Safezone verlassen.", 10000)
+					ESX.ShowNotification("Du hast die Safezone verlassen.")
 				end
 				if safezone.speedlimitinSafezone then
-				SetVehicleMaxSpeed(vehicle, 1000.00)
+					SetVehicleMaxSpeed(vehicle, 1000.00)
 				end
 				SetEntityCanBeDamaged(vehicle, true)
 				SafezoneOut = true
@@ -71,37 +69,37 @@ CreateThread(function()
 			Wait(200)
 		end
 		if SafezoneIn then
-		Wait(10)
-    if not bypass then
-		DisablePlayerFiring(player, true)
-		SetPlayerCanDoDriveBy(player, false)
-		DisableControlAction(2, 37, true)
-      	DisableControlAction(0, 106, true)
-		DisableControlAction(0, 24, true)
-		DisableControlAction(0, 69, true)
-		DisableControlAction(0, 70, true)
-		DisableControlAction(0, 92, true)
-		DisableControlAction(0, 114, true)
-		DisableControlAction(0, 257, true)
-		DisableControlAction(0, 331, true)
-		DisableControlAction(0, 68, true)
-		DisableControlAction(0, 257, true)
-		DisableControlAction(0, 263, true)
-		DisableControlAction(0, 264, true)
+			Wait(10)
+			if not bypass then
+				DisablePlayerFiring(player, true)
+				SetPlayerCanDoDriveBy(player, false)
+				DisableControlAction(2, 37, true)
+				DisableControlAction(0, 106, true)
+				DisableControlAction(0, 24, true)
+				DisableControlAction(0, 69, true)
+				DisableControlAction(0, 70, true)
+				DisableControlAction(0, 92, true)
+				DisableControlAction(0, 114, true)
+				DisableControlAction(0, 257, true)
+				DisableControlAction(0, 331, true)
+				DisableControlAction(0, 68, true)
+				DisableControlAction(0, 257, true)
+				DisableControlAction(0, 263, true)
+				DisableControlAction(0, 264, true)
 
-		if safezone.speedlimitinSafezone then
-		mphs = 2.237
-		maxspeed = safezone.speedlimitinSafezone/mphs
-		SetVehicleMaxSpeed(vehicle, maxspeed)
-		end
+				if safezone.speedlimitinSafezone then
+					mphs = 2.237
+					maxspeed = safezone.speedlimitinSafezone/mphs
+					SetVehicleMaxSpeed(vehicle, maxspeed)
+				end
 
-			if IsDisabledControlJustPressed(2, 37) then
-				SetCurrentPedWeapon(player,GetHashKey("WEAPON_UNARMED"),true)
-			end
-			if IsDisabledControlJustPressed(0, 106) then 
-				SetCurrentPedWeapon(player,GetHashKey("WEAPON_UNARMED"),true)
+				if IsDisabledControlJustPressed(2, 37) then
+					SetCurrentPedWeapon(player,GetHashKey("WEAPON_UNARMED"),true)
+				end
+				if IsDisabledControlJustPressed(0, 106) then 
+					SetCurrentPedWeapon(player,GetHashKey("WEAPON_UNARMED"),true)
+				end
 			end
 		end
-	end
 	end
 end)

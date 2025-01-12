@@ -6,7 +6,7 @@ RegisterNetEvent('mashalla:einreise', function(myId)
 	CreateThread(function()
 		for i = 15, 1, -1 do
 			if i == 15 or i == 10 or i < 5 then
-				TriggerEvent("cataleya_hud:sendNotify", "info", "HotLife | Guideverwaltung", "Arbeit beginnt in " .. i .. " Sekunden", 5000)
+				ESX.ShowNotification("Arbeit beginnt in " .. i .. " Sekunden")
 			end
 			Wait(1000)
 		end

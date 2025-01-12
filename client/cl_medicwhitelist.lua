@@ -53,7 +53,7 @@ function checkCar(car)
         PlayerData = ESX.GetPlayerData()
         if isCarBlacklisted(carModel) and PlayerData.job ~= nil and PlayerData.job.name ~= 'ambulance' then
             KickPlayerFromVehicle(PlayerPedId())
-            TriggerEvent('cataleya_hud:sendNotify', 'error', 'HotLife | System', 'Du kannst nur als Medic auf den Fahrersitz', 3000)
+            ESX.ShowNotification('Du kannst nur als Medic auf den Fahrersitz')
         end
     end
 end

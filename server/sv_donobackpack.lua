@@ -46,7 +46,7 @@ RegisterNetEvent('HotLife_backpacks:updateBackpackLVL', function(xPlayer, lvl, t
 
     MySQL.Async.execute('UPDATE `users` SET backpack = @lvl WHERE identifier = @id', { ['@lvl'] = lvl, ['@id'] = xPlayer.getIdentifier() }, function(affectedRows) 
         if affectedRows > 0 then 
-            xPlayer.triggerEvent('cataleya_hud:sendNotify', 'success', 'Rucksack', 'Du hast nun mehr Platz im Inventar', 5000)
+            TriggerClientEvent('esx:showNotification', xPlayer.source, 'Du hast nun mehr Platz im Inventar')
             print(xPlayer.getName() .. ' hat einen Rucksack eingelöst')
             print(xPlayer.getName() .. ' hat einen Rucksack eingelöst')
             print(xPlayer.getName() .. ' hat einen Rucksack eingelöst')

@@ -16,7 +16,7 @@ AddEventHandler('diaz_jobs:getcashmash', function(k, cautionType, cautionAmount)
         local xPlayer = ESX.GetPlayerFromId(source)
         local money = DConfig.Jobs[cautionType].MoneyPerSpot * cautionAmount
         xPlayer.addAccountMoney('money', money)
-        TriggerEvent("cataleya_hud:sendNotify", "info", "HotLife | Minijobs", 'Du wurdest für deine Arbeit bezahlt! Du erhälst: '..money.."$", 5000)
+        TriggerClientEvent('esx:showNotification', source, 'Du wurdest für deine Arbeit bezahlt! Du erhälst: '..money.."$")
         local embed = {
             {
                 ["color"] = "10038562",
@@ -27,8 +27,8 @@ AddEventHandler('diaz_jobs:getcashmash', function(k, cautionType, cautionAmount)
                 }
             },
         }
-        PerformHttpRequest("WEBHOOK_HERE", function(err, text, headers) end, 'POST', json.encode({username = "HotLife | Bot", avatar_url = avatar, embeds = embed}), { ['Content-Type'] = 'application/json' })
+        PerformHttpRequest("WEBHOOK_HERE", function(err, text, headers) end, 'POST', json.encode({username = "ESX | Bot", avatar_url = avatar, embeds = embed}), { ['Content-Type'] = 'application/json' })
     else
-        TriggerEvent("EasyAdmin:banPlayer", source, "Money Exploid (Jobs)", false, "HotLifeONTOP")
+        TriggerEvent("EasyAdmin:banPlayer", source, "Money Exploid (Jobs)", false, "ESXONTOP")
     end
 end)

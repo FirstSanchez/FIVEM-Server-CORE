@@ -18,7 +18,7 @@ CreateThread(function()
             if DeleteCar(DeathCauseHash) then
                 Wait(1000)
                 TriggerEvent("esx_ambulancejob:revive")
-				TriggerEvent('cataleya_hud:sendNotify', "HotLife | AntiVDM", "Du wurdest VDMt und revived", "success", 2500)
+                ESX.ShowNotification("ESX | AntiVDM: Du wurdest VDMt und revived")
             end
         end
         while IsEntityDead(playerPed) do

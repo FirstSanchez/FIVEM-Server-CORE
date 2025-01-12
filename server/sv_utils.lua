@@ -15,7 +15,7 @@ local vehicleSpeed = 0
 RegisterCommand('tempo', function()
     if not IsDriver() then return end
     if isBoot() then
-        TriggerEvent('cataleya_hud:sendNotify','info', 'Tempomat', 'Du kannst bei einem Boot kein Tempomat einstellen', 5000)
+        TriggerClientEvent('esx:showNotification', source, 'Du kannst bei einem Boot kein Tempomat einstellen')
         return
     end
     TriggerCruiseControl()
@@ -30,14 +30,14 @@ function TriggerCruiseControl()
         if GetVehiculeSpeed() > 0 then
             CruisedSpeed = GetVehiculeSpeed()
             CruisedSpeedKm = TransformToKm(CruisedSpeed)
-            TriggerEvent('cataleya_hud:sendNotify','info','Tempomat', 'Tempomat: ' .. math.floor(CruisedSpeed * 3.6 + 0.5) .. ' km/h', 5000)
+            TriggerClientEvent('esx:showNotification', source, 'Tempomat: ' .. math.floor(CruisedSpeed * 3.6 + 0.5) .. ' km/h')
             CreateThread(function ()
                 while CruisedSpeed > 0 and IsInVehicle() == PlayerPedId() do
                     Wait(0)
                     
                     if not IsTurningOrHandBraking() and GetVehiculeSpeed() < (CruisedSpeed - 1.5) then
                         CruisedSpeed = 0
-                        TriggerEvent('cataleya_hud:sendNotify','info', 'Tempomat', 'Tempomat deaktiviert', 5000)
+                        TriggerClientEvent('esx:showNotification', source, 'Tempomat deaktiviert')
                         Wait(2000)
                         break
                     end
@@ -53,7 +53,7 @@ function TriggerCruiseControl()
 
                     if IsControlJustPressed(2, 72) then
                         CruisedSpeed = 0
-                        TriggerEvent('cataleya_hud:sendNotify','info', 'Tempomat', 'Tempomat deaktiviert', 5000)
+                        TriggerClientEvent('esx:showNotification', source, 'Tempomat deaktiviert')
                         Wait(2000)
                         break
                     end
@@ -126,14 +126,14 @@ RegisterCommand('begrenzer', function(source, args)
 
  	if vehicleCruiser == 'on' then
  		vehicleCruiser = 'off'
- 		SetEntityMaxSpeed(vehicle,98.0)
-    TriggerEvent('cataleya_hud:sendNotify','info', 'Begrenzer', 'Begrenzer deaktiviert', 5000)
+        SetEntityMaxSpeed(vehicle, 98.0)
+        TriggerClientEvent('esx:showNotification', source, 'Begrenzer deaktiviert')
 
- 		else
- 			vehicleCruiser = 'on'
- 			SetEntityMaxSpeed(vehicle, vehicleSpeedSource)
-            TriggerEvent('cataleya_hud:sendNotify','info', 'Begrenzer', 'Begrenzer aktiviert', 5000)
- 		end
+        else
+            vehicleCruiser = 'on'
+            SetEntityMaxSpeed(vehicle, vehicleSpeedSource)
+            TriggerClientEvent('esx:showNotification', source, 'Begrenzer aktiviert')
+        end
  	end
 end, false)
 
@@ -163,11 +163,11 @@ RegisterCommand('dm', function(source, args)
     end
     if source == 0 then
         if xTarget.getName() ~= nil then
-            TriggerClientEvent('cataleya_hud:sendNotify', "info", target, "ADMIN DM", message,  10000)
+            TriggerClientEvent('esx:showNotification', target, "ADMIN DM: " .. message)
         end
-    elseif xPlayer.getGroup() ~= 'user' then
+        elseif xPlayer.getGroup() ~= 'user' then
         if xTarget.getName() ~= nil then
-            TriggerClientEvent('cataleya_hud:sendNotify', "info", target, "ADMIN DM", message,  10000)
+            TriggerClientEvent('esx:showNotification', target, "ADMIN DM: " .. message)
         end
     end
 end)
@@ -182,26 +182,26 @@ end)
 
 AddEventHandler('txAdmin:events:scheduledRestart', function(eventData)
 ------------ Restart Ankündigungen ----------
-     if eventData.secondsRemaining == 3600 then
-         TriggerClientEvent('cataleya_hud:sendAnnounce', -1, 'Automatischer Restart', 'Der Server wird in einer Stunde neugestartet', 10000)
-     end
-     if eventData.secondsRemaining == 1800 then
-         TriggerClientEvent('cataleya_hud:sendAnnounce', -1, 'Automatischer Restart', 'Der Server wird in 30 Minuten neugestartet', 10000)
-     end
-     if eventData.secondsRemaining == 900 then
-         TriggerClientEvent('cataleya_hud:sendAnnounce', -1, 'Automatischer Restart', 'Der Server wird in 15 Minuten neugestartet', 10000)
-     end
-     if eventData.secondsRemaining == 600 then
-         TriggerClientEvent('cataleya_hud:sendAnnounce', -1, 'Automatischer Restart', 'Der Server wird in 10 Minuten neugestartet', 10000)
-     end
-     if eventData.secondsRemaining == 300 then
-         TriggerClientEvent('cataleya_hud:sendAnnounce', -1, 'Automatischer Restart', 'Der Server wird in 5 Minuten neugestartet', 10000)
-     end
-     if eventData.secondsRemaining == 60 then
-         TriggerClientEvent('cataleya_hud:sendAnnounce', -1, 'Automatischer Restart', 'Der Server wird in einer Minute neugestartet', 10000)
-     end
-     if eventData.secondsRemaining == 5 then
-         TriggerClientEvent('cataleya_hud:sendAnnounce', -1, 'Automatischer Restart', 'Der Server wird nun neugestartet bitte verlasst den Server!', 10000)
-     end
+    if eventData.secondsRemaining == 3600 then
+        TriggerClientEvent('esx:showNotification', -1, 'Automatischer Restart: Der Server wird in einer Stunde neugestartet')
+    end
+    if eventData.secondsRemaining == 1800 then
+        TriggerClientEvent('esx:showNotification', -1, 'Automatischer Restart: Der Server wird in 30 Minuten neugestartet')
+    end
+    if eventData.secondsRemaining == 900 then
+        TriggerClientEvent('esx:showNotification', -1, 'Automatischer Restart: Der Server wird in 15 Minuten neugestartet')
+    end
+    if eventData.secondsRemaining == 600 then
+        TriggerClientEvent('esx:showNotification', -1, 'Automatischer Restart: Der Server wird in 10 Minuten neugestartet')
+    end
+    if eventData.secondsRemaining == 300 then
+        TriggerClientEvent('esx:showNotification', -1, 'Automatischer Restart: Der Server wird in 5 Minuten neugestartet')
+    end
+    if eventData.secondsRemaining == 60 then
+        TriggerClientEvent('esx:showNotification', -1, 'Automatischer Restart: Der Server wird in einer Minute neugestartet')
+    end
+    if eventData.secondsRemaining == 5 then
+        TriggerClientEvent('esx:showNotification', -1, 'Automatischer Restart: Der Server wird nun neugestartet, bitte verlasst den Server!')
+    end
  end)
 ------------ Restart Ankündigungen ----------

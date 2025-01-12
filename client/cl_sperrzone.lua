@@ -14,7 +14,7 @@ local Keys = {
 
 CreateThread(function()
 	while ESX == nil do
-		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+        ESX = exports["es_extended"]:getSharedObject()
 		Wait(0)
 	end
 
@@ -40,7 +40,7 @@ end)
 RegisterNetEvent('lm__sperrzone:setBlips')
 AddEventHandler('lm__sperrzone:setBlips', function(officerName, officerServerId, officerPlayer, blipVector, streetName, sizeclient)
     if sperrzone_cooldown == 1 then
-        TriggerEvent('cataleya_hud:sendNotify', "error", "HotLife | System", "Du kannst Sperrzonen nicht so schnell neu erstellen", 3000)
+        ESX.ShowNotification("Du kannst Sperrzonen nicht so schnell neu erstellen")
     else
 		RemoveBlip(blipX)
 		RemoveBlip(blipY)

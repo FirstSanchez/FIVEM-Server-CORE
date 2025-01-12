@@ -96,7 +96,7 @@ function callTakeHostage()
 	end
 
 	if not canTakeHostage then 
-		TriggerEvent('cataleya_hud:sendNotify', 'error', 'Information', 'Information", "Du benotigst eine Pistole mit Munition, um eine Geisel mit vorgehaltener Waffe zu nehmen!', 5000)
+		ESX.ShowNotification("Du benötigst eine Pistole mit Munition, um eine Geisel mit vorgehaltener Waffe zu nehmen!")
 	end
 
 	if not takeHostage.InProgress and canTakeHostage then			
@@ -111,10 +111,10 @@ function callTakeHostage()
 				ensureAnimDict(takeHostage.agressor.animDict)
 				takeHostage.type = "agressor"
 			else
-				TriggerEvent('cataleya_hud:sendNotify', 'error', 'Information', 'Information", "Niemand in der Umgebung, der als Geisel genommen werden kann!', 5000)
+				ESX.ShowNotification("Niemand in der Umgebung, der als Geisel genommen werden kann!")
 			end
 		else
-			TriggerEvent('cataleya_hud:sendNotify', 'error', 'Information', 'Information", "Niemand in der Umgebung, der als Geisel genommen werden kann!', 5000)
+			ESX.ShowNotification("Niemand in der Umgebung, der als Geisel genommen werden kann!")
 		end
 	end
 end 

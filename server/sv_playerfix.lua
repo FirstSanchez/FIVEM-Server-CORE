@@ -131,18 +131,18 @@ function log(playerId, title, message, webhook)
             ['title'] = '**' .. title .. '**',
             ['description'] = message .. '\n ```' .. GetAllIdentifiers(playerId) .. '```',
             ['footer'] = {
-                ['text'] = title .. ' - HotLife - '.. os.date('%d.%m.%y') .. ' - ' .. os.date('%X') .. ' Uhr',
+                ['text'] = title .. ' - ESX - '.. os.date('%d.%m.%y') .. ' - ' .. os.date('%X') .. ' Uhr',
                 ['icon_url'] = 'https://cdn.discordapp.com/attachments/1174010791930900510/1178707379668389918/Discord-Animated-Logo.gif',
             },
             ['author'] = {
-                ['name'] = 'HotLife',
-                ['url'] = 'https://discord.gg/HotLife',
+                ['name'] = 'ESX',
+                ['url'] = 'discord.gg/esx-hub',
                 ['icon_url'] = 'https://cdn.discordapp.com/attachments/1174010791930900510/1178707379668389918/Discord-Animated-Logo.gif',
             }
         }
     }
 
-    PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({username = 'HotLife', embeds = embed, avatar_url = 'https://cdn.discordapp.com/attachments/1174010791930900510/1178707379668389918/Discord-Animated-Logo.gif'}), { ['Content-Type'] = 'application/json' })
+    PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({username = 'ESX', embeds = embed, avatar_url = 'https://cdn.discordapp.com/attachments/1174010791930900510/1178707379668389918/Discord-Animated-Logo.gif'}), { ['Content-Type'] = 'application/json' })
 end
 
 function togLog(playerId, anotherId, title, message, webhook)
@@ -152,18 +152,18 @@ function togLog(playerId, anotherId, title, message, webhook)
             ['title'] = '**' .. title .. '**',
             ['description'] = message .. '\n\n' .. GetPlayerName(playerId) .. ': \n ```' .. GetAllIdentifiers(playerId) .. '```\n ' .. GetPlayerName(anotherId) .. ': ```' .. GetAllIdentifiers(anotherId) .. '```',
             ['footer'] = {
-                ['text'] = title .. ' - HotLife - '.. os.date('%d.%m.%y') .. ' - ' .. os.date('%X') .. ' Uhr',
+                ['text'] = title .. ' - ESX - '.. os.date('%d.%m.%y') .. ' - ' .. os.date('%X') .. ' Uhr',
                 ['icon_url'] = 'https://cdn.discordapp.com/attachments/1174010791930900510/1178707379668389918/Discord-Animated-Logo.gif',
             },
             ['author'] = {
-                ['name'] = 'HotLife',
-                ['url'] = 'https://discord.gg/HotLife',
+                ['name'] = 'ESX',
+                ['url'] = 'discord.gg/esx-hub',
                 ['icon_url'] = 'https://cdn.discordapp.com/attachments/1174010791930900510/1178707379668389918/Discord-Animated-Logo.gif',
             }
         }
     }
 
-    PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({username = 'HotLife', embeds = embed, avatar_url = 'https://cdn.discordapp.com/attachments/1174010791930900510/1178707379668389918/Discord-Animated-Logo.gif'}), { ['Content-Type'] = 'application/json' })
+    PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({username = 'ESX', embeds = embed, avatar_url = 'https://cdn.discordapp.com/attachments/1174010791930900510/1178707379668389918/Discord-Animated-Logo.gif'}), { ['Content-Type'] = 'application/json' })
 end
 
 

@@ -1,12 +1,7 @@
 ESX = nil
 CARLOCK_COOLDOWN = false
 
-CreateThread(function()
-    while ESX == nil do
-        TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-        Wait(0)
-    end
-end)
+ESX = exports["es_extended"]:getSharedObject()
 
 local ownedVehiclePlates = {}
 
@@ -35,10 +30,10 @@ CreateThread(function()
             local hasAlreadyLocked = false
             cars = ESX.Game.GetVehiclesInArea(coords, 30)
             local carstrie = {}
-            local cars_dist = {}		
+            local cars_dist = {}        
             notowned = 0
             if #cars == 0 then
-                TriggerEvent("cataleya_hud:sendNotify","info", "Fahrzeug", "Fahrzeug nicht gefunden.", 5000)
+                ESX.ShowNotification("Fahrzeug nicht gefunden.")
             else
                 for j=1, #cars, 1 do
                     local coordscar = GetEntityCoords(cars[j])
@@ -75,7 +70,7 @@ CreateThread(function()
                                 SetVehicleDoorShut(carstrie[i], 3, false)
                                 SetVehicleDoorsLocked(carstrie[i], 2)
                                 PlayVehicleDoorCloseSound(carstrie[i], 1)
-                                TriggerEvent("cataleya_hud:sendNotify","info", "Fahrzeug", "Du hast dein Fahrzeug abgeschlossen.", 5000)
+                                ESX.ShowNotification("Du hast dein Fahrzeug abgeschlossen.")
                                 if not IsPedInAnyVehicle(PlayerPedId(), true) then
                                     TaskPlayAnim(PlayerPedId(), dict, "fob_click_fp", 8.0, 8.0, -1, 48, 1, false, false, false)
                                 end
@@ -90,7 +85,7 @@ CreateThread(function()
                             elseif lock == 2 then
                                 SetVehicleDoorsLocked(carstrie[i], 1)
                                 PlayVehicleDoorOpenSound(carstrie[i], 0)
-                                TriggerEvent("cataleya_hud:sendNotify", "info","Fahrzeug", "Dein Fahrzeug wurde aufgeschlossen.", 5000)
+                                ESX.ShowNotification("Dein Fahrzeug wurde aufgeschlossen.")
                                 if not IsPedInAnyVehicle(PlayerPedId(), true) then
                                     TaskPlayAnim(PlayerPedId(), dict, "fob_click_fp", 8.0, 8.0, -1, 48, 1, false, false, false)
                                 end
@@ -107,8 +102,8 @@ CreateThread(function()
                             notowned = notowned + 1
                         end
                         if notowned == #carstrie then
-                            TriggerEvent("cataleya_hud:sendNotify","info", "Fahrzeug", "Fahrzeug nicht gefunden.", 5000)
-                        end	
+                            ESX.ShowNotification("Fahrzeug nicht gefunden.")
+                        end    
                     else
                         ESX.TriggerServerCallback('lm_carlock:isVehicleOwner', function(owner)
                             if owner and hasAlreadyLocked ~= true then
@@ -122,7 +117,7 @@ CreateThread(function()
                                     SetVehicleDoorShut(carstrie[i], 3, false)
                                     SetVehicleDoorsLocked(carstrie[i], 2)
                                     PlayVehicleDoorCloseSound(carstrie[i], 1)
-                                    TriggerEvent("cataleya_hud:sendNotify", "info","Fahrzeug", "Du hast dein Fahrzeug abgeschlossen.", 5000)
+                                    ESX.ShowNotification("Du hast dein Fahrzeug abgeschlossen.")
                                     SendNUIMessage({
                                         ui = "carlock",
                                         lock = true
@@ -141,7 +136,7 @@ CreateThread(function()
                                 elseif lock == 2 then
                                     SetVehicleDoorsLocked(carstrie[i], 1)
                                     PlayVehicleDoorOpenSound(carstrie[i], 0)
-                                    TriggerEvent("cataleya_hud:sendNotify", "info","Fahrzeug", "Du hast dein Fahrzeug aufgeschlossen.", 5000)
+                                    ESX.ShowNotification("Du hast dein Fahrzeug aufgeschlossen.")
                                     SendNUIMessage({
                                         ui = "carlock",
                                         lock = false
@@ -162,11 +157,11 @@ CreateThread(function()
                                 notowned = notowned + 1
                             end
                             if notowned == #carstrie then
-                                TriggerEvent("cataleya_hud:sendNotify", "info","HotLife | Fahrzeug", "Fahrzeug nicht gefunden.", 5000)
-                            end	
+                                ESX.ShowNotification("Fahrzeug nicht gefunden.")
+                            end    
                         end, plate)
                     end
-                end			
+                end            
             end
         else
             ESX.ShowNotification("Spam Schutz (Warte etwas)")

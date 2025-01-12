@@ -20,7 +20,7 @@ local canObject = 0
 local canProp = ''
 
 --RageUIShit
-local AutomatenMainMenu = RageUI.CreateMenu('', '                    HotLife 24/7')
+local AutomatenMainMenu = RageUI.CreateMenu('', '                    ESX 24/7')
 AutomatenMainMenu.X = 0 --Top Left
 AutomatenMainMenu.Y = 65 --Top Left
 local SelectedAutomat

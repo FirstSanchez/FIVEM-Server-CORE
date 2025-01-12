@@ -29,7 +29,7 @@ RegisterCommand('tuner', function(source, args, rawCommand)
     TriggerClientEvent('lm_tunerplcheck:check', source)
     exports['sanchez_base']:log(source, 'Commands - Log', 'Der Spieler ' .. GetPlayerName(source) .. ' hat den Befehl **tuner** ausgeführt', 'WEBHOOK_HERE')
   else
-      TriggerEvent("cataleya_hud:sendNotify", "error", "INFORMATION", xPlayer.source "Das darfst du nicht", "error", 15000)
+      TriggerClientEvent('esx:showNotification', xPlayer.source, 'Das darfst du nicht')
       exports['sanchez_base']:log(source, 'Commands - Log', 'Der Spieler ' .. GetPlayerName(source) .. ' hat probiert sein Auto zu tunen \n\n Command: **/tuner**', 'WEBHOOK_HERE')
     end
 end)

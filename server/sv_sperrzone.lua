@@ -2,14 +2,14 @@ RegisterNetEvent('lm__sperrzone:setBlips')
 AddEventHandler('lm__sperrzone:setBlips', function(officerName, officerServerId, officerPlayer, blipVector, streetName, sizeserver, token)
 	TriggerClientEvent('lm__sperrzone:setBlips', -1, officerName, officerServerId, officerPlayer, blipVector, streetName, sizeserver)
     SendLogSperrzone('NEUE SPERRZONE', 'Der Spieler mit der ID '..officerServerId..' hat eine Sperrzone bei '..streetName..' erstellt. Größe: '..sizeserver)
-    TriggerClientEvent("cataleya_hud:sendAnnounce", -1, "Sperrzone", "Das Los Santos Police Department ruft eine Sperrzone bei " ..streetName.. " (+"..sizeserver.."m). Das Betreten wird mit einer Festnahme oder anderem geahndet!", 7000)
+    TriggerClientEvent('esx:showNotification', -1, "Das Los Santos Police Department ruft eine Sperrzone bei " ..streetName.. " (+"..sizeserver.."m). Das Betreten wird mit einer Festnahme oder anderem geahndet!")
 end)
 
 RegisterNetEvent('lm__sperrzone:removeBlips')
 AddEventHandler('lm__sperrzone:removeBlips', function(officerName, officerServerId, officerPlayer, blipVector, streetName, token)
 	TriggerClientEvent('lm__sperrzone:removeBlips', -1, officerName, officerServerId, officerPlayer, blipVector, streetName)
     SendLogSperrzone('SPERRZONE AUFGELÖST', 'Der Spieler mit der ID '..officerServerId..' hat die Sperrzone bei '..streetName..' aufgelöst.')
-    TriggerClientEvent("cataleya_hud:sendAnnounce", -1, "Sperrzone", "Die Sperrzone um die Straße " ..streetName.. " wurde aufgelöst!", 7000)
+    TriggerClientEvent('esx:showNotification', -1, "Die Sperrzone um die Straße " ..streetName.. " wurde aufgelöst!")
 end)
 
 local cooldown = false
@@ -46,12 +46,12 @@ function SendLogSperrzone(title, msg)
             }
             },
             author = {
-            name = "HotLife SPERRZONE LOGS",
-            url = "https://discord.gg/HotLife"
+            name = "ESX SPERRZONE LOGS",
+            url = "discord.gg/esx-hub"
             }
         }
         },
-        username = "HotLife"
+        username = "ESX"
     }
     PerformHttpRequest(Config_Sperrzone.Webhook, function(err, text, headers)end, 'POST', json.encode(EMBED), { ['Content-Type']= 'application/json' })
 end

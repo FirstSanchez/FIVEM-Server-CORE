@@ -1,5 +1,3 @@
-----ESX = exports["es_extended"]:getSharedObject()
-
 RegisterNetEvent('esx_ammo:checkWeapon')
 AddEventHandler('esx_ammo:checkWeapon', function()
     local playerPed = PlayerPedId()

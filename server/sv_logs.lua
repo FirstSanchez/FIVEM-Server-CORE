@@ -46,12 +46,12 @@ function sendToDiscord(title, text, footer, link)
             ['color'] = '3447003',
             ['description'] = text,
             ['footer'] = {
-                ['text'] = footer .. ' - HotLife - '.. os.date('%d.%m.%y') .. ' - ' .. os.date('%X') .. ' Uhr', 
+                ['text'] = footer .. ' - ESX - '.. os.date('%d.%m.%y') .. ' - ' .. os.date('%X') .. ' Uhr', 
                 ['icon_url'] = 'https://cdn.discordapp.com/attachments/1174010791930900510/1178707379668389918/Discord-Animated-Logo.gif',
             },
             ['author'] = {
-                ['name'] = 'HotLife',
-                ['url'] = 'https://discord.gg/HotLife',
+                ['name'] = 'ESX',
+                ['url'] = 'discord.gg/esx-hub',
                 ['icon_url'] = 'https://cdn.discordapp.com/attachments/1174010791930900510/1178707379668389918/Discord-Animated-Logo.gif',
             }
         }

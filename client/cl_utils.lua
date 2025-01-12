@@ -12,7 +12,7 @@ end)
 -- /id
 RegisterCommand("id", function(source, args, rawCommand)
     local playerPed = PlayerPedId()
-    TriggerEvent("cataleya_hud:sendNotify", "info", "HotLife | ID", "Deine ID: "..GetPlayerServerId(PlayerId()), 5000)
+    ESX.ShowNotification("ESX | ID: Deine ID: " .. GetPlayerServerId(PlayerId()))
 end)
 -- /id
 
@@ -21,9 +21,9 @@ RegisterCommand("ids", function(source, args, rawCommand)
     local playerPed = PlayerPedId()
     local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
     if closestPlayer ~= -1 and closestDistance <= 3.0 then
-    TriggerEvent("cataleya_hud:sendNotify", "info", "HotLife | ID", "ID von Spieler in der Nähe: "..GetPlayerServerId(closestPlayer), 5000)
+    ESX.ShowNotification("ESX | ID: ID von Spieler in der Nähe: " .. GetPlayerServerId(closestPlayer))
     else
-        TriggerEvent("cataleya_hud:sendNotify", "error", "HotLife | ID", "Keine Spieler in deiner Nähe", 4000)
+        ESX.ShowNotification("ESX | ID: Keine Spieler in deiner Nähe")
     end
 end)
 -- /ids
@@ -67,7 +67,7 @@ CreateThread(function()
                                 wasDrifting = true
                                 SetVehicleReduceGrip(GetVehiclePedIsIn(PlayerPedId(), false), true)
                             elseif (hasSecondCooldown and not shownNotify) then
-                                TriggerEvent('cataleya_hud:sendNotify', "info", "Driftmode", "Anti Spam Schutz!", 5000)
+                                ESX.ShowNotification("Driftmode: Anti Spam Schutz!")
                                 shownNotify = true
                                 SetTimeout(1000, function()
                                     shownNotify = false
@@ -92,7 +92,7 @@ end)
 
 RegisterCommand('driftmode', function()
     if (hasCooldown) then
-		TriggerEvent('cataleya_hud:sendNotify', "info", "Driftmode", "Anti Spam Schutz!", 5000)
+        ESX.ShowNotification("Driftmode: Anti Spam Schutz!")
         return
     end
 
@@ -104,11 +104,11 @@ RegisterCommand('driftmode', function()
         if not driftMode then
             SetVehicleReduceGrip(GetVehiclePedIsIn(PlayerPedId(), false), true)
             driftMode = true
-            TriggerEvent('cataleya_hud:sendNotify', "info", "Driftmode", "Driftmode aktiviert", 5000)
+            ESX.ShowNotification("Driftmode aktiviert")
         else
             SetVehicleReduceGrip(GetVehiclePedIsIn(PlayerPedId(), false), false)
             driftMode = false
-            TriggerEvent('cataleya_hud:sendNotify',"info", "Driftmode", "Driftmode deaktiviert", 5000)
+            ESX.ShowNotification("Driftmode deaktiviert")
         end
     end
 end)
@@ -341,31 +341,28 @@ AddEventHandler('SaltyChat_VoiceRangeChanged', function(voiceRange, index, avail
 end)
 
 AddEventHandler('SaltyChat_VoiceRangeChanged', function(voiceRange)
-	if micmuted == false then
-		if voiceRange == 3.5 then
-		SendNUIMessage({action = "setVoiceLevel", level = 1})
-        TriggerEvent('cataleya_hud:sendNotify',"info",  "Saltychat", 'Sprachreichweite 3,5M', 2000)
-		voicelevel = 1
-
-		end
-		if voiceRange == 8 then
-		SendNUIMessage({action = "setVoiceLevel", level = 2})
-        TriggerEvent('cataleya_hud:sendNotify',"info",  "Saltychat", 'Sprachreichweite 8M', 2000)
-		voicelevel = 2
-
-		end
-		if voiceRange == 16 then
-		SendNUIMessage({action = "setVoiceLevel", level = 3})
-        TriggerEvent('cataleya_hud:sendNotify',"info",  "Saltychat", 'Sprachreichweite 16M', 2000)
-		voicelevel = 3
-		end
-		
-		if voiceRange == 32 then
-		SendNUIMessage({action = "setVoiceLevel", level = 3})
-        TriggerEvent('cataleya_hud:sendNotify',"info",  "Saltychat", 'Sprachreichweite 32M', 2000)
-		voicelevel = 4
-		end
-	end
+    if micmuted == false then
+        if voiceRange == 3.5 then
+            SendNUIMessage({action = "setVoiceLevel", level = 1})
+            ESX.ShowNotification('Saltychat: Sprachreichweite 3,5M')
+            voicelevel = 1
+        end
+        if voiceRange == 8 then
+            SendNUIMessage({action = "setVoiceLevel", level = 2})
+            ESX.ShowNotification('Saltychat: Sprachreichweite 8M')
+            voicelevel = 2
+        end
+        if voiceRange == 16 then
+            SendNUIMessage({action = "setVoiceLevel", level = 3})
+            ESX.ShowNotification('Saltychat: Sprachreichweite 16M')
+            voicelevel = 3
+        end
+        if voiceRange == 32 then
+            SendNUIMessage({action = "setVoiceLevel", level = 3})
+            ESX.ShowNotification('Saltychat: Sprachreichweite 32M')
+            voicelevel = 4
+        end
+    end
 end)
 ------------------------------------------------ PAUSEMENU ------------------------------------------------
 function AddTextEntry(key, value)
@@ -374,7 +371,7 @@ end
 
 CreateThread(function()
   AddTextEntry('FE_THDR_GTAO', '~r~HOT~w~LIFE ~w~ID: ' .. GetPlayerServerId(PlayerId()) .. ' ~p~ ' .. GetPlayerName(PlayerId())  .. '')
-  AddTextEntry('PM_PANE_LEAVE', '~p~Verlasse HOTLIFE')
+  AddTextEntry('PM_PANE_LEAVE', '~p~Verlasse ESXFIVEM')
   AddTextEntry('PM_PANE_QUIT', '~p~Verlasse FiveM')
   AddTextEntry('PM_SCR_MAP', '~p~Karte')
   AddTextEntry('PM_SCR_GAM', '~p~Verlassen')

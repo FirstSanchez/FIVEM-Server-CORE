@@ -1,8 +1,7 @@
 local isCurrentlyCollecting, isCurrentlySelling = false, false
 
 function ShootRaycast(from, to)
-    local raycast = StartExpensiveSynchronousShapeTestLosProbe(from.x, from.y, from.z, to.x, to.y, to.z, 1, PlayerPedId()
-    , 4)
+    local raycast = StartExpensiveSynchronousShapeTestLosProbe(from.x, from.y, from.z, to.x, to.y, to.z, 1, PlayerPedId(), 4)
     return raycast
 end
 
@@ -17,8 +16,7 @@ RegisterCommand("muschelnsammeln", function()
 
             if (success) then
                 local raycast = ShootRaycast(playerCoords, vector3(playerCoords.x, playerCoords.y, (height - 1.0)))
-                local _, hit, endCoords, surfaceNormal, materialHash, entityHit = GetShapeTestResultIncludingMaterial(
-                    raycast)
+                local _, hit, endCoords, surfaceNormal, materialHash, entityHit = GetShapeTestResultIncludingMaterial(raycast)
 
                 if (materialHash == 1288448767) then
                     isCurrentlyCollecting = true
@@ -58,9 +56,7 @@ CreateThread(function()
         Wait(0)
     end
 
-    local npc = CreatePed(2, "a_m_m_prolhost_01", Confing_Muscheln.SellPos.x, Confing_Muscheln.SellPos.y, Confing_Muscheln.SellPos.z, Confing_Muscheln.SellPos.w, false
-        ,
-        false)
+    local npc = CreatePed(2, "a_m_m_prolhost_01", Confing_Muscheln.SellPos.x, Confing_Muscheln.SellPos.y, Confing_Muscheln.SellPos.z, Confing_Muscheln.SellPos.w, false, false)
     FreezeEntityPosition(npc, true)
     SetEntityInvincible(npc, true)
     SetBlockingOfNonTemporaryEvents(npc, true)
@@ -86,26 +82,21 @@ RegisterCommand("selljewerly", function()
                             ESX.TriggerServerCallback("corbo_muscheln:sell", function(money, pearls, diamonds)
                                 if (pearls > 0 or diamonds > 0) then
                                     if (pearls > 0 and diamonds > 0) then
-                                        TriggerEvent("cataleya_hud:sendNotify", "success", "Juwelen Ankauf", "Du hast " ..
-                                            money ..
-                                            "€ für " .. pearls .. " Perlen und " .. diamonds .. " Diamanten bekommen")
+                                        ESX.ShowNotification("Du hast " .. money .. "€ für " .. pearls .. " Perlen und " .. diamonds .. " Diamanten bekommen")
                                     end
                                     if (pearls > 0 and diamonds <= 0) then
-                                        TriggerEvent("cataleya_hud:sendNotify", "success", "Juwelen Ankauf", "Du hast " ..
-                                            money .. "€ für " .. pearls .. " Perlen bekommen")
+                                        ESX.ShowNotification("Du hast " .. money .. "€ für " .. pearls .. " Perlen bekommen")
                                     end
                                     if (diamonds > 0 and pearls <= 0) then
-                                        TriggerEvent("cataleya_hud:sendNotify", "success", "Juwelen Ankauf", "Du hast " ..
-                                            money .. "€ für " .. diamonds .. " Diamanten bekommen")
+                                        ESX.ShowNotification("Du hast " .. money .. "€ für " .. diamonds .. " Diamanten bekommen")
                                     end
                                 else
-                                    TriggerEvent("cataleya_hud:sendNotify", "error", "Juwelen Ankauf",
-                                        "Du hast nichts zum verkaufen")
+                                    ESX.ShowNotification("Du hast nichts zum verkaufen")
                                 end
                             end)
                         end)
                     else
-                        TriggerEvent("cataleya_hud:sendNotify", "error", "Juwelen Ankauf", "Du hast nichts zum verkaufen")
+                        ESX.ShowNotification("Du hast nichts zum verkaufen")
                     end
                 end)
             end

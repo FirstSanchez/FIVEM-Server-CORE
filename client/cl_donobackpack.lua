@@ -1,4 +1,3 @@
--- Einfach RDY bei bedarf Sanchez NERVEN!!!
 ESX = nil
 local token = nil
 CreateThread(function()

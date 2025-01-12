@@ -3,10 +3,10 @@ Config = {};
 Config.HideOverlay = 112
 
 Config.Translations = {
-    title: "HotLife",
-    backTitle: "HotLife",
-    description: "Auf HotLife erwartet dich ein umfangreiches  erlebnis mit gefährlichen Gangs, kaltblütigen Familien und verrückten Charakteren die dein Handeln immer wieder auf die probe stellen. Steigere dich und werde zu einem der gefürchtetsten Personen auf der Insel. Egal welches Ziel du verfolgst, ob legal oder illegal. Auf dieser Insel findest du immer deinen weg.",
-    rightStatsTitle: "HotLife ",
+    title: "ESX",
+    backTitle: "ESX",
+    description: "Auf ESX erwartet dich ein umfangreiches  erlebnis mit gefährlichen Gangs, kaltblütigen Familien und verrückten Charakteren die dein Handeln immer wieder auf die probe stellen. Steigere dich und werde zu einem der gefürchtetsten Personen auf der Insel. Egal welches Ziel du verfolgst, ob legal oder illegal. Auf dieser Insel findest du immer deinen weg.",
+    rightStatsTitle: "ESX ",
     teamPageTitle: "SERVER TEAM",
     teamButton: "TEAM",
     mainButton: "INFO",
@@ -18,9 +18,9 @@ Config.Translations = {
 }
 
 Config.SocialMedia = [
-    {image:"images/discord.png",link:"discord.gg/HotLife"},
-    {image:"images/discord.png",link:"discord.gg/HotLife"},
-    {image:"images/discord.png",link:"discord.gg/HotLife"},
+    {image:"images/discord.png",link:"discord.gg/ESX"},
+    {image:"images/discord.png",link:"discord.gg/ESX"},
+    {image:"images/discord.png",link:"discord.gg/ESX"},
 ];
 
 Config.Team = [

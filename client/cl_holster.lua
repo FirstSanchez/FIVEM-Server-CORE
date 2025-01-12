@@ -1,13 +1,9 @@
+ESX = exports["es_extended"]:getSharedObject()
 local holstered  = true
 local blocked	 = false
 local PlayerData = {}
 
-CreateThread(function()
-	while ESX == nil do
-		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-		Wait(0)
-	end
-	
+CreateThread(function()	
 	while ESX.GetPlayerData().job == nil do
 		Wait(10)
 	end

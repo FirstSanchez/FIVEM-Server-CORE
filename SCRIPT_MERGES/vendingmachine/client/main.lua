@@ -76,5 +76,5 @@ AddEventHandler('kek:oger', function()
 end)
 
 function Notify(title, message, type)
-    TriggerEvent('cataleya_hud:sendNotify', title, message, type, 5000)
+    ESX.ShowNotification(message)
 end

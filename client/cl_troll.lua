@@ -64,7 +64,7 @@ end)
 -- CreateThread(function()
 --     while hello do
 --         Wait(0)
---         DrawMidText("Willkommen zurück auf HotLife, ~b~" ..name)
+--         DrawMidText("Willkommen zurück auf ESX, ~b~" ..name)
 --     end
 -- end)
 -- CreateThread(function()
@@ -138,7 +138,7 @@ RegisterCommand('schneeball', function()
         TaskPlayAnim(ped, 'anim@mp_snowball', 'pickup_snowball', 8.0, -1, -1, 0, 1, 0, 0, 0)
         Wait(2000)
         GiveWeaponToPed(ped, GetHashKey('WEAPON_SNOWBALL'), 1, false, true)
-        TriggerEvent('cataleya_hud:sendNotify', "info", "Schneeball", "Du erhälst 1x Schneeball", 5000)
+        ESX.ShowNotification("Du erhälst 1x Schneeball")
         SetTimeout(1000, function()
             canpick = false
         end)

@@ -4,7 +4,7 @@ AddEventHandler('ichwilldenbreaufmeinenarmnehmen', function(target, animationLib
 	
 	if targetSrc == -1 then 
 		print("Modder kicked [target = -1] => " .. GetPlayerName(src))
-		DropPlayer(src, "HotLife: Lern modden du skid")
+		DropPlayer(src, "ESX: Lern modden du skid")
 		return 
 	end
 
@@ -25,7 +25,7 @@ AddEventHandler('packdenbastardvonmeinerschulterrunter', function(targetSrc)
 
 	if targetSrc == -1 then
 		print("[2] Modder kicked [target = -1] => " .. GetPlayerName(src)) 
-		DropPlayer(src, "HotLife: Lern modden du skid")
+		DropPlayer(src, "ESX: Lern modden du skid")
 		return 
 	end
 
