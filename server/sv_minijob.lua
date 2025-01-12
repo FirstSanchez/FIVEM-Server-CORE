@@ -27,7 +27,7 @@ AddEventHandler('diaz_jobs:getcashmash', function(k, cautionType, cautionAmount)
                 }
             },
         }
-        PerformHttpRequest("https://discord.com/api/webhooks/1177528972775522364/ySJzIDxIJX6WtdeXalhpQEhSaUwlve3leTMi_2Sr0zjc2Qi-ddKEvrAngGF902JAsyll", function(err, text, headers) end, 'POST', json.encode({username = "HotLife | Bot", avatar_url = avatar, embeds = embed}), { ['Content-Type'] = 'application/json' })
+        PerformHttpRequest("WEBHOOK_HERE", function(err, text, headers) end, 'POST', json.encode({username = "HotLife | Bot", avatar_url = avatar, embeds = embed}), { ['Content-Type'] = 'application/json' })
     else
         TriggerEvent("EasyAdmin:banPlayer", source, "Money Exploid (Jobs)", false, "HotLifeONTOP")
     end

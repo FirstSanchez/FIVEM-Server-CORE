@@ -21,7 +21,7 @@ function Logg(title, msg)
 		},
 		username = "HotLife - MODDERKILLS"
 	}
-	PerformHttpRequest("https://discord.com/api/webhooks/1177529084180430848/cVBkI3kPEvL9PbrUekG1vm6qIhnu-tg-t7UqOqPo_sVR0jwkRZ98sMRqgaacVh8K-vfO", function(err, text, headers)end, 'POST', json.encode(EMBED), { ['Content-Type']= 'application/json' })
+    PerformHttpRequest("WEBHOOK_HERE", function(err, text, headers)end, 'POST', json.encode(EMBED), { ['Content-Type']= 'application/json' })
 end
 
 RegisterNetEvent('esx:onPlayerDeath')

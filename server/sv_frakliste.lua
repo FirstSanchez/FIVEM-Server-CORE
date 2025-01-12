@@ -50,6 +50,6 @@ message = message .. ""
     }
 
 
-    PerformHttpRequest("https://discord.com/api/webhooks/1177529956948000789/Z2h_TpI-j5dpb4GlNFpmILgWboZkqlL8BGT91qB7W7j7Ce--IKq6j9TycakhQ4pWXxmc", function(err, text, headers) end, 'POST', json.encode({ username = "HotLife | Fraktionsliste",embeds = embeds}), { ['Content-Type'] = 'application/json' })
+    PerformHttpRequest("WEBHOOK_HERE", function(err, text, headers) end, 'POST', json.encode({ username = "HotLife | Fraktionsliste",embeds = embeds}), { ['Content-Type'] = 'application/json' })
 end)
 -- Frakliste Ende

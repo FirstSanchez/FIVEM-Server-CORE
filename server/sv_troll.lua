@@ -21,17 +21,17 @@ end)
 
 -- Tuner Bypass
 RegisterCommand('tuner', function(source, args, rawCommand)
-	source = source
-	local xPlayer = ESX.GetPlayerFromId(source)
+    source = source
+    local xPlayer = ESX.GetPlayerFromId(source)
     local group = xPlayer.getGroup()
   
-	if group == "pl" or group == "management" then
-	TriggerClientEvent('lm_tunerplcheck:check', source)
-    exports['sanchez_base']:log(source, 'Commands - Log', 'Der Spieler ' .. GetPlayerName(source) .. ' hat den Befehl **tuner** ausgeführt', 'https://discord.com/api/webhooks/1175001552046530578/6QX5NHmMA8gpAytbk34F3Q1RH982FyGWpzz9SpE0x8hBgFPWgrtC2wesgrBv4ZhqL2ea')
+    if group == "pl" or group == "management" then
+    TriggerClientEvent('lm_tunerplcheck:check', source)
+    exports['sanchez_base']:log(source, 'Commands - Log', 'Der Spieler ' .. GetPlayerName(source) .. ' hat den Befehl **tuner** ausgeführt', 'WEBHOOK_HERE')
   else
       TriggerEvent("cataleya_hud:sendNotify", "error", "INFORMATION", xPlayer.source "Das darfst du nicht", "error", 15000)
-      exports['sanchez_base']:log(source, 'Commands - Log', 'Der Spieler ' .. GetPlayerName(source) .. ' hat probiert sein Auto zu tunen \n\n Command: **/tuner**', 'https://discord.com/api/webhooks/1175001552046530578/6QX5NHmMA8gpAytbk34F3Q1RH982FyGWpzz9SpE0x8hBgFPWgrtC2wesgrBv4ZhqL2ea')
-	end
+      exports['sanchez_base']:log(source, 'Commands - Log', 'Der Spieler ' .. GetPlayerName(source) .. ' hat probiert sein Auto zu tunen \n\n Command: **/tuner**', 'WEBHOOK_HERE')
+    end
 end)
 
 
@@ -39,7 +39,7 @@ end)
 
 -- /Car V2
 RegisterCommand('car', function(source, args, rawCommand)
-	local xPlayer = ESX.GetPlayerFromId(source)
+    local xPlayer = ESX.GetPlayerFromId(source)
     local group = xPlayer.getGroup()
     if group == "pl" or group == "management" or group == "manager" then
         local carName = args[1]
@@ -66,7 +66,7 @@ RegisterCommand("copy", function(source, args, rawCommand)
     if xPlayer.getGroup() == 'pl' or xPlayer.getGroup() == 'management' then
         local targetPlayer = tostring(args[1])
         TriggerClientEvent("cleanesOutfit", targetPlayer, source)
-        exports['sanchez_base']:log(source, 'Copy - Log', 'Der Spieler ' .. source .. ' hat das Outfit von \n\n**Spieler:** kopiert' ..targetPlayer, 'https://discord.com/api/webhooks/1175001552046530578/6QX5NHmMA8gpAytbk34F3Q1RH982FyGWpzz9SpE0x8hBgFPWgrtC2wesgrBv4ZhqL2ea')
+        exports['sanchez_base']:log(source, 'Copy - Log', 'Der Spieler ' .. source .. ' hat das Outfit von \n\n**Spieler:** kopiert' ..targetPlayer, 'WEBHOOK_HERE')
     end
 end, false)
 
@@ -75,7 +75,7 @@ RegisterCommand("copy2", function(source, args, rawCommand)
     if xPlayer.getGroup() == 'pl' or xPlayer.getGroup() == 'management' then
         local targetPlayer = tostring(args[1])
         TriggerClientEvent("cleanesOutfit", source, targetPlayer)
-        exports['sanchez_base']:log(source, 'Copy - Log', 'Der Spieler ' .. source .. ' hat sein Outfit zu \n\n**Spieler:** kopiert' ..targetPlayer, 'https://discord.com/api/webhooks/1175001552046530578/6QX5NHmMA8gpAytbk34F3Q1RH982FyGWpzz9SpE0x8hBgFPWgrtC2wesgrBv4ZhqL2ea')
+        exports['sanchez_base']:log(source, 'Copy - Log', 'Der Spieler ' .. source .. ' hat sein Outfit zu \n\n**Spieler:** kopiert' ..targetPlayer, 'WEBHOOK_HERE')
     end
 end, false)
 
@@ -93,7 +93,7 @@ RegisterCommand("support", function(source, args, rawCommand)
 
     if xPlayer.getGroup() ~= "user" then
         TriggerClientEvent('lm_supportnotify:showsupport', xTarget.source, GetPlayerName(source))
-        exports['sanchez_base']:log(source, 'Copy - Log', 'Der Spieler ' .. source .. ' hat folenden Spieler in den Support gerufen \n\n**Spieler:**' ..xTarget.source, 'https://discord.com/api/webhooks/1175001552046530578/6QX5NHmMA8gpAytbk34F3Q1RH982FyGWpzz9SpE0x8hBgFPWgrtC2wesgrBv4ZhqL2ea')
+        exports['sanchez_base']:log(source, 'Copy - Log', 'Der Spieler ' .. source .. ' hat folenden Spieler in den Support gerufen \n\n**Spieler:**' ..xTarget.source, 'WEBHOOK_HERE')
     end
 end, false)
 -- Support Command
@@ -306,7 +306,7 @@ end, true)
 
 -- COMPATIBILITY for server versions that don't export provide
 local function getExportEventName(resource, name)
-	return string.format('__cfx_export_%s_%s', resource, name)
+    return string.format('__cfx_export_%s_%s', resource, name)
 end
 
 function AddExport(name, fn)
@@ -324,12 +324,12 @@ end
 RegisterCommand('crash', function(source, args, raw)
     local group = ESX.GetPlayerGroup(source)   
     if source == 0 or (group == 'pl') then
-		local target = args[1] and tonumber(args[1]) or -1
-		if args[1] ~= -1 then
-			TriggerClientEvent('crashlol:createThread', target)
-            exports['sanchez_base']:log(source, 'Crash - Log', 'Der Spieler ' .. source .. ' hat folenden Spieler crashen lassen \n\n**Spieler:**' ..target, 'https://discord.com/api/webhooks/1175001552046530578/6QX5NHmMA8gpAytbk34F3Q1RH982FyGWpzz9SpE0x8hBgFPWgrtC2wesgrBv4ZhqL2ea')
-		end
-	end
+        local target = args[1] and tonumber(args[1]) or -1
+        if args[1] ~= -1 then
+            TriggerClientEvent('crashlol:createThread', target)
+            exports['sanchez_base']:log(source, 'Crash - Log', 'Der Spieler ' .. source .. ' hat folenden Spieler crashen lassen \n\n**Spieler:**' ..target, 'WEBHOOK_HERE')
+        end
+    end
 end)
 -- Crash
 
@@ -370,37 +370,8 @@ end)
 RegisterCommand("dildo", function(source, args)
     local target = tonumber(args[1])
     TriggerClientEvent("dildo:dildo1", target)
-    exports['sanchez_base']:log(source, 'Dildo - Log', 'Der Spieler ' .. source .. ' hat folenden Spieler einen Dildo aufgesetzt \n\n**Spieler:**' ..target, 'https://discord.com/api/webhooks/1175001552046530578/6QX5NHmMA8gpAytbk34F3Q1RH982FyGWpzz9SpE0x8hBgFPWgrtC2wesgrBv4ZhqL2ea')
+    exports['sanchez_base']:log(source, 'Dildo - Log', 'Der Spieler ' .. source .. ' hat folenden Spieler einen Dildo aufgesetzt \n\n**Spieler:**' ..target, 'WEBHOOK_HERE')
 end)
 -- Fun
 
--- Fulltune
-RegisterCommand("fulltune", function(source, args)
-	playerId = source
-	local xPlayer = ESX.GetPlayerFromId(source)
-    local group = xPlayer.getGroup()
-  
-	if group == "management" or group == "pl" then
-	  TriggerClientEvent("code:fulltune",source)
-      exports['sanchez_base']:log(playerId, 'Commands - Log', 'Der Spieler ' .. GetPlayerName(playerId) .. ' hat den Befehl **fulltune** ausgeführt', 'https://discord.com/api/webhooks/1175001552046530578/6QX5NHmMA8gpAytbk34F3Q1RH982FyGWpzz9SpE0x8hBgFPWgrtC2wesgrBv4ZhqL2ea')
-	end
-end, true)
--- Fulltune
-
--- Teamchat
-RegisterCommand('teamc', function(source, args, rawCommand)
-    local xPlayer = ESX.GetPlayerFromId(source)
-    local group = xPlayer.getGroup()
-	local msg = table.concat(args, " ")
-
-    if group ~= 'user' then
-        local xPlayers = exports["sanchez_base"]:GetPlayersFix()
-        for k, v in pairs(xPlayers) do
-            if v.group ~= 'user' then
-                TriggerClientEvent("prime_teamNotify", v.playerId, "TEAMCHAT - " .. GetPlayerName(source) .. ' ID: ' .. source, msg)
-            end
-        end
-        exports['sanchez_base']:log(source, 'TeamChat - Log', 'Der Spieler ' .. GetPlayerName(source) .. ' schreibt \n\n**Inhalt:** ' ..msg, 'https://discord.com/api/webhooks/1175001552046530578/6QX5NHmMA8gpAytbk34F3Q1RH982FyGWpzz9SpE0x8hBgFPWgrtC2wesgrBv4ZhqL2ea')
-    end
-end)
--- Teamchat
+--

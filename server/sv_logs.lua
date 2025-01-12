@@ -1,63 +1,62 @@
 -- Join
 AddEventHandler('playerConnecting', function()
     local playerId = source
-    exports['sanchez_base']:log(source, 'Join - Log', 'Der Spieler **' .. GetPlayerName(playerId) .. '** verbindet sich zum Server!', 'https://discord.com/api/webhooks/1175000709641555998/Xs3iP9sGhIcHEgBWq5yfaPehm_0-0ADP_xUK5u_iy9OwAVWnai41EXf2RHFpUbKQ7dLd')
+    exports['sanchez_base']:log(source, 'Join - Log', 'Der Spieler **' .. GetPlayerName(playerId) .. '** verbindet sich zum Server!', 'WEBHOOK_HERE')
 end)
 
 -- Leave
 AddEventHandler('playerDropped', function(reason)
     local playerId = source
-    exports['sanchez_base']:log(source, 'Leave - Log', 'Der Spieler **' .. GetPlayerName(playerId) .. '** mit der **ID: ' .. playerId .. '** trennt die Verbindung zum Server (Grund: ' .. reason ..')!', 'https://discord.com/api/webhooks/1177530198174998578/WBbQnclRKKs9N27nLneZ-6nYAFJE7Lp1xCAEvzPiKHPNEuyjGOewlvztCgl5HQEFDkiJ')
+    exports['sanchez_base']:log(source, 'Leave - Log', 'Der Spieler **' .. GetPlayerName(playerId) .. '** mit der **ID: ' .. playerId .. '** trennt die Verbindung zum Server (Grund: ' .. reason ..')!', 'WEBHOOK_HERE')
 end)
 
 -- Kick
 AddEventHandler('txAdmin:events:playerKicked', function(eventData)
     local name = GetPlayerName(eventData.target)
-    sendToDiscord('Spieler wurde gekickt', 'Der Spieler **'..name..' (ID: '..eventData.target..')** wurde von **'..eventData.author..'** gekickt. \n\nGrund: **'..eventData.reason..'**', 'Tx-Admin Logs', 'https://discord.com/api/webhooks/1177530292119027753/Syi1AmsrHgS_TNRW8QB5aGXtY-_vDW_5xQlFBKsmfn50EDDuV58PBqzTk9W6R8jwaLwR')
+    sendToDiscord('Spieler wurde gekickt', 'Der Spieler **'..name..' (ID: '..eventData.target..')** wurde von **'..eventData.author..'** gekickt. \n\nGrund: **'..eventData.reason..'**', 'Tx-Admin Logs', 'WEBHOOK_HERE')
 end)
 
 AddEventHandler('txAdmin:events:actionRevoked', function(eventData)
-	local id = eventData.actionId
-	local atype = eventData.actionType
-	local reason = eventData.actionReason
-	local actionAuthor = eventData.actionAuthor
-	local playerName = eventData.playerName
-	local identifiers = extractIdentifiers(eventData.playerIds)
-	local revokedBy = eventData.revokedBy
-	
-	if atype == 'ban' then
-		sendToDiscord('Ban wurde widerrufen', 'Widerrufen von: '..revokedBy..'\n\n----------------Bandaten---------------\nGebannt von: **'..actionAuthor..'**\nBangrund: **'..reason..'**\nBan-ID: `'..id..'`\nSpielername: **'..playerName..'**\nDiscord: <@'..identifiers.discord..'>\nSteam: '..identifiers.steamid..'\nLicense: '..identifiers.license..'\nLicense2: '..identifiers.license2..'\nXBL: '..identifiers.xbl..'\nIP: '..identifiers.ip..'\nLiveID: '..identifiers.liveid..'', 'Tx-Admin Logs', 'https://discord.com/api/webhooks/1177530292119027753/Syi1AmsrHgS_TNRW8QB5aGXtY-_vDW_5xQlFBKsmfn50EDDuV58PBqzTk9W6R8jwaLwR')
-	elseif atype == 'warn' then 
-		sendToDiscord('Warn wurde widerrufen', 'Widerrufen von: '..revokedBy..'\n\n---------------Warndaten---------------\nGewarnt von: **'..actionAuthor..'**\nWarngrund: **'..reason..'**\nWarn-ID: `'..id..'`\nSpielername: **'..playerName..'**\nDiscord: <@'..identifiers.discord..'>\nSteam: '..identifiers.steamid..'\nLicense: '..identifiers.license..'\nLicense2: '..identifiers.license2..'\nXBL: '..identifiers.xbl..'\nIP: '..identifiers.ip..'\nLiveID: '..identifiers.liveid..'', 'Tx-Admin Logs', 'https://discord.com/api/webhooks/1177530292119027753/Syi1AmsrHgS_TNRW8QB5aGXtY-_vDW_5xQlFBKsmfn50EDDuV58PBqzTk9W6R8jwaLwR')
-	else
-		sendToDiscord('Aktion wurde widerrufen', 'Widerrufen von: '..revokedBy..'\n\n------------Aktionsdaten--------------\nAktion von: **'..actionAuthor..'**\nAktionsgrund: **'..reason..'**\nAktions-ID: `'..id..'`\nSpielername: **'..playerName..'**\nDiscord: <@'..identifiers.discord..'>\nSteam: '..identifiers.steamid..'\nLicense: '..identifiers.license..'\nLicense2: '..identifiers.license2..'\nXBL: '..identifiers.xbl..'\nIP: '..identifiers.ip..'\nLiveID: '..identifiers.liveid..'', 'Tx-Admin Logs', 'https://discord.com/api/webhooks/1177530292119027753/Syi1AmsrHgS_TNRW8QB5aGXtY-_vDW_5xQlFBKsmfn50EDDuV58PBqzTk9W6R8jwaLwR')
-	end
+    local id = eventData.actionId
+    local atype = eventData.actionType
+    local reason = eventData.actionReason
+    local actionAuthor = eventData.actionAuthor
+    local playerName = eventData.playerName
+    local identifiers = extractIdentifiers(eventData.playerIds)
+    local revokedBy = eventData.revokedBy
+    
+    if atype == 'ban' then
+        sendToDiscord('Ban wurde widerrufen', 'Widerrufen von: '..revokedBy..'\n\n----------------Bandaten---------------\nGebannt von: **'..actionAuthor..'**\nBangrund: **'..reason..'**\nBan-ID: `'..id..'`\nSpielername: **'..playerName..'**\nDiscord: <@'..identifiers.discord..'>\nSteam: '..identifiers.steamid..'\nLicense: '..identifiers.license..'\nLicense2: '..identifiers.license2..'\nXBL: '..identifiers.xbl..'\nIP: '..identifiers.ip..'\nLiveID: '..identifiers.liveid..'', 'Tx-Admin Logs', 'WEBHOOK_HERE')
+    elseif atype == 'warn' then 
+        sendToDiscord('Warn wurde widerrufen', 'Widerrufen von: '..revokedBy..'\n\n---------------Warndaten---------------\nGewarnt von: **'..actionAuthor..'**\nWarngrund: **'..reason..'**\nWarn-ID: `'..id..'`\nSpielername: **'..playerName..'**\nDiscord: <@'..identifiers.discord..'>\nSteam: '..identifiers.steamid..'\nLicense: '..identifiers.license..'\nLicense2: '..identifiers.license2..'\nXBL: '..identifiers.xbl..'\nIP: '..identifiers.ip..'\nLiveID: '..identifiers.liveid..'', 'Tx-Admin Logs', 'WEBHOOK_HERE')
+    else
+        sendToDiscord('Aktion wurde widerrufen', 'Widerrufen von: '..revokedBy..'\n\n------------Aktionsdaten--------------\nAktion von: **'..actionAuthor..'**\nAktionsgrund: **'..reason..'**\nAktions-ID: `'..id..'`\nSpielername: **'..playerName..'**\nDiscord: <@'..identifiers.discord..'>\nSteam: '..identifiers.steamid..'\nLicense: '..identifiers.license..'\nLicense2: '..identifiers.license2..'\nXBL: '..identifiers.xbl..'\nIP: '..identifiers.ip..'\nLiveID: '..identifiers.liveid..'', 'Tx-Admin Logs', 'WEBHOOK_HERE')
+    end
 end)
 
 --> Functions
 
-
 function sendToDiscord(title, text, footer, link)
-	local embed = {
-		{
-			['title'] = '**' .. title .. '**',
-			['thumbnail'] = {
-				['url'] = 'https://cdn.discordapp.com/attachments/1174010791930900510/1178707379668389918/Discord-Animated-Logo.gif',
-			},
-			['color'] = '3447003',
-			['description'] = text,
-			['footer'] = {
+    local embed = {
+        {
+            ['title'] = '**' .. title .. '**',
+            ['thumbnail'] = {
+                ['url'] = 'https://cdn.discordapp.com/attachments/1174010791930900510/1178707379668389918/Discord-Animated-Logo.gif',
+            },
+            ['color'] = '3447003',
+            ['description'] = text,
+            ['footer'] = {
                 ['text'] = footer .. ' - HotLife - '.. os.date('%d.%m.%y') .. ' - ' .. os.date('%X') .. ' Uhr', 
-				['icon_url'] = 'https://cdn.discordapp.com/attachments/1174010791930900510/1178707379668389918/Discord-Animated-Logo.gif',
-			},
+                ['icon_url'] = 'https://cdn.discordapp.com/attachments/1174010791930900510/1178707379668389918/Discord-Animated-Logo.gif',
+            },
             ['author'] = {
                 ['name'] = 'HotLife',
                 ['url'] = 'https://discord.gg/HotLife',
                 ['icon_url'] = 'https://cdn.discordapp.com/attachments/1174010791930900510/1178707379668389918/Discord-Animated-Logo.gif',
             }
-		}
-	}
-	PerformHttpRequest('https://discord.com/api/webhooks/1177530292119027753/Syi1AmsrHgS_TNRW8QB5aGXtY-_vDW_5xQlFBKsmfn50EDDuV58PBqzTk9W6R8jwaLwR', function(err, text, headers) end, 'POST', json.encode({username = Config.name, embeds = embed}), { ['Content-Type'] = 'application/json' })
+        }
+    }
+    PerformHttpRequest('WEBHOOK_HERE', function(err, text, headers) end, 'POST', json.encode({username = Config.name, embeds = embed}), { ['Content-Type'] = 'application/json' })
 end
 
 function toint(n)
@@ -69,7 +68,6 @@ function toint(n)
         return n
     end
 end
-
 
 function extractIdentifiers(identifiers)
     local result = {

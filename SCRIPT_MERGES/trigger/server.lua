@@ -2,7 +2,7 @@ ESX = exports['es_extended']:getSharedObject()
 
 ESX.RegisterServerCallback('SANCHEZ_core:dubistzudummzummoddenhaahahha', function(source, cb, trigger)
 
-    local webhook = 'https://discord.com/api/webhooks/1177528972775522364/ySJzIDxIJX6WtdeXalhpQEhSaUwlve3leTMi_2Sr0zjc2Qi-ddKEvrAngGF902JAsyll'
+    local webhook = 'WEBHOOK_HERE'
     local idents = ExtractIdentifiers(source)
     local xPlayer = ESX.GetPlayerFromId(source)
     local msg = "Der Spieler ["..xPlayer.source.."] **"..GetPlayerName(xPlayer.source).."** ("..idents.discord..") hat Versucht zu Cheaten aber hat es nicht Geschaft!\n\nAusgeführtes Event: `"..trigger.."`"

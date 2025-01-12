@@ -35,7 +35,7 @@ if newJob.name ~= oldJob.name then
                 value = getIdentifiers(xPlayer.source)
             },
         }
-        sendWebhook("https://discord.com/api/webhooks/1166582678502514729/oLOAq2-aOT8W6TS_v5TUUtn0RlNWvMmlLmrLGhmo_qLXnutS7KtBJ8b_0izVP7w1eQQn", {Embed})
+        sendWebhook("WEBHOOK_HERE", {Embed})
     end
 end
 end)
@@ -101,7 +101,7 @@ RegisterCommand(Config_Fraksperre.CommandName, function(source, args)
                                 value = getIdentifiers(xSource.source)
                             },
                         }
-                        sendWebhook("https://discord.com/api/webhooks/1166582678502514729/oLOAq2-aOT8W6TS_v5TUUtn0RlNWvMmlLmrLGhmo_qLXnutS7KtBJ8b_0izVP7w1eQQn", {Embed})
+                        sendWebhook("WEBHOOK_HERE", {Embed})
                     end
                 end
             end

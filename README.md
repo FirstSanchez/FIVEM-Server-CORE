@@ -123,6 +123,14 @@ Die Konfigurationsdateien befinden sich im `config/`-Verzeichnis:
 - `cf_vehicledamage.lua` - Fahrzeugschaden-Einstellungen
 - Weitere spezifische Konfigurationsdateien für jedes Modul
 
+### Webhook-Konfiguration
+
+Die Datei `webhooks.lua` enthält Platzhalter für Discord-Webhooks:
+```lua
+Config_Sperrzone.Webhook = "WEBHOOK_HERE"
+```
+Ersetze "WEBHOOK_HERE" mit deinem Discord-Webhook-Link für die entsprechende Funktionalität.
+
 ## Abhängigkeiten
 
 - ESX Framework

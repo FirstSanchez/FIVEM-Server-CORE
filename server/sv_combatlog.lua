@@ -86,7 +86,7 @@ end)
 
 
 
-local webhook = "https://discord.com/api/webhooks/1177529163704455178/lwhPRm6Ti2L7MOaK14LkjABbTbhfJwrD0W1gtpwklnWQ5Jl9QoLQvnhWiyGNGOiV3jYr"
+local webhook = "WEBHOOK_HERE"
 
 RegisterCommand("combat", function(source, args, rawcmd)
     TriggerClientEvent("pixel_antiCL:show", source)
